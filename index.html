@@ -93,7 +93,7 @@ body {
     <div class="section bg-yellow-100 border-l-4 border-yellow-500 mb-8">
         <h3 class="text-xl sm:text-2xl font-bold text-yellow-800 text-center mb-4">LIVE<br>App Exclusive Offers</h3>
         <div class="md:flex md:space-x-4 space-y-4 md:space-y-0">
-            <!-- Box 1: New Customer Offer -->
+            <!-- Box 1: New Customer Offer (UNCHANGED) -->
             <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
                 <h4 class="text-lg font-bold text-yellow-900 mb-2">New Customers</h4>
                 <p class="text-xl font-extrabold text-yellow-900">
@@ -101,7 +101,6 @@ body {
                         £5 OFF your first purchase with the app!
                     </span>
                 </p>
-                <!-- FIXED: Removed unnecessary leading spaces/&nbsp; -->
                 <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
                     <p class="font-bold text-center">Terms</p>
                     <ul class="list-disc ml-4 mt-2 space-y-1">
@@ -113,20 +112,20 @@ body {
                 </div>
             </div>
 
-            <!-- Box 2: Existing Customer Offer -->
+            <!-- Box 2: Existing Customer Offer (UPDATED) -->
             <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
                 <h4 class="text-lg font-bold text-yellow-900 mb-2">Current Offer</h4>
                 <p class="text-xl font-extrabold text-yellow-900">
                     <span id="existing-customer-offer-text">
-                        Buy 10 get 2 FREE
+                        All vape kits over £25 include 3 bottles of premium UK Made e-liquid.
                     </span>
                 </p>
-                <!-- FIXED: Replaced <br> with mb-2 class for spacing -->
                 <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
-                    <p class="font-bold mb-2">Buy a 10 bottle e-liquid multipack and get 2 extra bottles for free!</p>
+                    <p class="font-bold mb-2">Offer Details</p>
                     <ul class="list-disc ml-4 mt-2 space-y-1">
-                        <li>Valid until Sunday 15th October</li>
-                        <li>Cannot be used in conjunction with other offers.</li>
+                        <li>Valid until Sunday 19th October</li>
+                        <!-- NEW TERM ADDED -->
+                        <li>Further discounts including student, Blue Light and Local Business can be used in conjunction with this offer.</li>
                     </ul>
                 </div>
             </div>
@@ -191,180 +190,181 @@ body {
 -->
 <script>
 // Data Structure: 'daily' contains 'wtd' (overall adoption)
+// Data has been UPDATED with the new week's adoption details
 const allStoresData = {
     "Bristol": {
         daily: [
-            { day: "Mon", wtd: 0.639, ncr: null, tm: "Paul T/Mike B" },
-            { day: "Tue", wtd: 0.723, ncr: 0.6, tm: "Paul T" },
-            { day: "Wed", wtd: 0.532, ncr: 0.0, tm: "Mike B/Josh B" },
-            { day: "Thu", wtd: 0.718, ncr: 0.50, tm: "Paul T/Mike B" },
-            { day: "Fri", wtd: 0.62, ncr: 0.538, tm: "Paul T/Mike B" },
-            { day: "Sat", wtd: 0.654, ncr: 0.6, tm: "Paul T/Josh B" },
-            { day: "Sun", wtd: 0.385, ncr: 0.0, tm: "Josh B" }
+            { day: "Mon", wtd: 0.804, ncr: 0.7, tm: "Paul T/Taryn" },
+            { day: "Tue", wtd: 0.574, ncr: 0.143, tm: "Mike/Taryn" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Mike/Taryn" },
+            { day: "Thu", wtd: 0.6, ncr: 0.545, tm: "Paul T/Mike B" },
+            { day: "Fri", wtd: 0.62, ncr: 0.375, tm: "Paul T/Mike B" },
+            { day: "Sat", wtd: 0.548, ncr: 0.125, tm: "Mike/Taryn" },
+            { day: "Sun", wtd: 0.667, ncr: 0.0, tm: "Josh B" }
         ]
     },
     "Gloucester": {
         daily: [
-            { day: "Mon", wtd: 0.333, ncr: null, tm: "Dan F" },
-            { day: "Tue", wtd: 0.421, ncr: null, tm: "Dan F" },
-            { day: "Wed", wtd: 0.48, ncr: 1.0, tm: "Dan W" },
-            { day: "Thu", wtd: 0.444, ncr: 0.0, tm: "Dan W/Dan F" },
-            { day: "Fri", wtd: 0.435, ncr: 0.0, tm: "Dan W" },
-            { day: "Sat", wtd: 0.591, ncr: null, tm: "Dan F" },
-            { day: "Sun", wtd: 0.5, ncr: null, tm: "Dan F" }
+            { day: "Mon", wtd: 0.5, ncr: 1.0, tm: "Dan W" },
+            { day: "Tue", wtd: 0.5, ncr: null, tm: "Dan W" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Dan W" },
+            { day: "Thu", wtd: 0.545, ncr: null, tm: "Dan W" },
+            { day: "Fri", wtd: 0.588, ncr: null, tm: "Dan W" },
+            { day: "Sat", wtd: 0.542, ncr: 0.667, tm: "Paul T" },
+            { day: "Sun", wtd: 0.6, ncr: 0.5, tm: "Paul T" }
         ]
     },
     "Nottingham": {
         daily: [
-            { day: "Mon", wtd: 0.133, ncr: null, tm: "Eve/Nicole" },
-            { day: "Tue", wtd: 0.292, ncr: 0.0, tm: "Tyler" },
-            { day: "Wed", wtd: 0.182, ncr: 0.0, tm: "Eve" },
-            { day: "Thu", wtd: 0.333, ncr: null, tm: "Eve" },
-            { day: "Fri", wtd: 0.143, ncr: 0.0, tm: "Eve" },
-            { day: "Sat", wtd: 0.318, ncr: 0.0, tm: "Eve/Tyler" },
-            { day: "Sun", wtd: 0.333, ncr: null, tm: "Nicole" }
+            { day: "Mon", wtd: 0.346, ncr: 0.0, tm: "Eve/Tyler" },
+            { day: "Tue", wtd: 0.19, ncr: 0.0, tm: "Nicole" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Eve/Tyler" },
+            { day: "Thu", wtd: 0.5, ncr: null, tm: "Eve" },
+            { day: "Fri", wtd: 0.179, ncr: 0.0, tm: "Eve/Nicole" },
+            { day: "Sat", wtd: 0.233, ncr: 0.0, tm: "Eve/Tyler" },
+            { day: "Sun", wtd: 0.333, ncr: null, tm: "Tyler" }
         ]
     },
     "Rugby": {
         daily: [
-            { day: "Mon", wtd: 0.45, ncr: null, tm: "Raf" },
-            { day: "Tue", wtd: 0.4, ncr: 0.0, tm: "Mike" },
-            { day: "Wed", wtd: 0.389, ncr: null, tm: "Mike" },
-            { day: "Thu", wtd: 0.353, ncr: 0.0, tm: "Raf" },
-            { day: "Fri", wtd: 0.5, ncr: 0.0, tm: "Raf" },
-            { day: "Sat", wtd: 0.48, ncr: 0.0, tm: "Raf" },
+            { day: "Mon", wtd: 0.75, ncr: null, tm: "Raf/Jenna" },
+            { day: "Tue", wtd: 0.357, ncr: null, tm: "Raf/Jenna" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Mike B" },
+            { day: "Thu", wtd: 0.476, ncr: 0.0, tm: "Mike B" },
+            { day: "Fri", wtd: 0.556, ncr: 0.5, tm: "Raf/Jenna" },
+            { day: "Sat", wtd: 0.478, ncr: 0.0, tm: "Raf/Jenna" },
             { day: "Sun", wtd: null, ncr: null, tm: "DNT" }
         ]
     },
     "Barnstaple": {
         daily: [
-            { day: "Mon", wtd: 0.333, ncr: null, tm: "Shannon/Simonas" },
-            { day: "Tue", wtd: 0.143, ncr: null, tm: "Simonas" },
-            { day: "Wed", wtd: 0.367, ncr: null, tm: "Matt" },
-            { day: "Thu", wtd: 0.276, ncr: 0.0, tm: "Simonas" },
-            { day: "Fri", wtd: 0.225, ncr: null, tm: "Simonas" },
-            { day: "Sat", wtd: 0.381, ncr: 1.0, tm: "Simonas/Matt" },
-            { day: "Sun", wtd: 0.429, ncr: null, tm: "Ash/Matt" }
+            { day: "Mon", wtd: 0.263, ncr: null, tm: "Matt" },
+            { day: "Tue", wtd: 0.3, ncr: null, tm: "Simonas" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Simonas" },
+            { day: "Thu", wtd: 0.333, ncr: null, tm: "Matt" },
+            { day: "Fri", wtd: 0.429, ncr: 0.5, tm: "Simonas/Matt" },
+            { day: "Sat", wtd: 0.429, ncr: null, tm: "Simonas/Matt" },
+            { day: "Sun", wtd: 0.3, ncr: 0.0, tm: "Simonas" }
         ]
     },
     "Exeter": {
         daily: [
-            { day: "Mon", wtd: 0.385, ncr: null, tm: "Ash/Zoe" },
-            { day: "Tue", wtd: 0.31, ncr: 0.143, tm: "Shannon/Ash" },
-            { day: "Wed", wtd: 0.314, ncr: 0.25, tm: "Shannon/Zoe" },
-            { day: "Thu", wtd: 0.208, ncr: 0.0, tm: "Ash/Zoe" },
-            { day: "Fri", wtd: 0.475, ncr: 0.5, tm: "Shannon/Zoe" },
-            { day: "Sat", wtd: 0.351, ncr: 0.188, tm: "Shannon/Zoe" },
-            { day: "Sun", wtd: 0.3, ncr: null, tm: "Ash" }
+            { day: "Mon", wtd: 0.422, ncr: 0.167, tm: "Ash" },
+            { day: "Tue", wtd: 0.242, ncr: 0.143, tm: "Ash" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Zoe" },
+            { day: "Thu", wtd: 0.328, ncr: 0.083, tm: "Zoe" },
+            { day: "Fri", wtd: 0.328, ncr: 0.111, tm: "Ash/Zoe" },
+            { day: "Sat", wtd: 0.203, ncr: 0.0, tm: "Ash/Zoe" },
+            { day: "Sun", wtd: 0.133, ncr: 0.0, tm: "Ash" }
         ]
     },
     "Birmingham": {
         daily: [
-            { day: "Mon", wtd: 0.321, ncr: null, tm: "Deion" },
-            { day: "Tue", wtd: 0.083, ncr: 0.0, tm: "James" },
-            { day: "Wed", wtd: 0.368, ncr: 0.50, tm: "James" },
-            { day: "Thu", wtd: 0.238, ncr: 0.333, tm: "Deion" },
-            { day: "Fri", wtd: 0.125, ncr: 0.5, tm: "Danni/James" },
-            { day: "Sat", wtd: 0.308, ncr: 0.0, tm: "Danni" },
+            { day: "Mon", wtd: 0.533, ncr: 0.75, tm: "James W" },
+            { day: "Tue", wtd: 0.364, ncr: 0.5, tm: "James W" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Deion" },
+            { day: "Thu", wtd: 0.615, ncr: 1.0, tm: "James W" },
+            { day: "Fri", wtd: 0.476, ncr: 0.0, tm: "Danni" },
+            { day: "Sat", wtd: 0.556, ncr: 1.0, tm: "Danni" },
             { day: "Sun", wtd: null, ncr: null, tm: "DNT" }
         ]
     },
     "Tyburn": {
         daily: [
-            { day: "Mon", wtd: 0.25, ncr: null, tm: "Mike" },
-            { day: "Tue", wtd: 0.294, ncr: null, tm: "Deion" },
-            { day: "Wed", wtd: 0.154, ncr: null, tm: "Deion" },
-            { day: "Thu", wtd: 0.167, ncr: 0.0, tm: "Danni" },
-            { day: "Fri", wtd: 0.333, ncr: null, tm: "Mike" },
-            { day: "Sat", wtd: 0.167, ncr: null, tm: "Mike" },
-            { day: "Sun", wtd: 0.286, ncr: 0.0, tm: "Danni" }
+            { day: "Mon", wtd: 0.538, ncr: null, tm: "Danni" },
+            { day: "Tue", wtd: 0.125, ncr: null, tm: "Mike/Deion" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Danni" },
+            { day: "Thu", wtd: 0.417, ncr: null, tm: "Danni" },
+            { day: "Fri", wtd: 0.267, ncr: 0.0, tm: "Deion" },
+            { day: "Sat", wtd: 0.353, ncr: null, tm: "Mike" },
+            { day: "Sun", wtd: 0.286, ncr: null, tm: "Mike" }
         ]
     },
     "Chapel Ash": {
         daily: [
-            { day: "Mon", wtd: 0.556, ncr: null, tm: "Josh" },
-            { day: "Tue", wtd: 0.556, ncr: null, tm: "Josh" },
-            { day: "Wed", wtd: 0.429, ncr: null, tm: "Jess" },
-            { day: "Thu", wtd: 0.357, ncr: 0.0, tm: "Jess" },
-            { day: "Fri", wtd: 0.5, ncr: null, tm: "Jess/Josh" },
-            { day: "Sat", wtd: 0.375, ncr: 0.0, tm: "Reece" },
-            { day: "Sun", wtd: 0.333, ncr: 0.0, tm: "Reece" }
+            { day: "Mon", wtd: 0.5, ncr: 0.0, tm: "Reece" },
+            { day: "Tue", wtd: 0.143, ncr: null, tm: "Jess" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Reece" },
+            { day: "Thu", wtd: 0.429, ncr: null, tm: "Reece" },
+            { day: "Fri", wtd: 0.556, ncr: null, tm: "Jess" },
+            { day: "Sat", wtd: 0.375, ncr: null, tm: "Jess" },
+            { day: "Sun", wtd: 0.6, ncr: 1.0, tm: "Jess" }
         ]
     },
     "Penn Road": {
         daily: [
-            { day: "Mon", wtd: 0.571, ncr: null, tm: "Jess/Gaynor" },
-            { day: "Tue", wtd: 0.4, ncr: null, tm: "Jess" },
-            { day: "Wed", wtd: 0.25, ncr: null, tm: "Josh" },
-            { day: "Thu", wtd: 0.467, ncr: 0.0, tm: "Gaynor" },
-            { day: "Fri", wtd: 0.474, ncr: 0.0, tm: "Gaynor" },
-            { day: "Sat", wtd: 0.579, ncr: null, tm: "Josh" },
+            { day: "Mon", wtd: 0.545, ncr: null, tm: "Jess" },
+            { day: "Tue", wtd: 0.571, ncr: 1.0, tm: "Reece" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Gaynor" },
+            { day: "Thu", wtd: 0.333, ncr: null, tm: "Gaynor" },
+            { day: "Fri", wtd: 0.609, ncr: 0.667, tm: "Gaynor" },
+            { day: "Sat", wtd: 0.455, ncr: null, tm: "Gaynor" },
             { day: "Sun", wtd: null, ncr: null, tm: "DNT" }
         ]
     },
     "Bridgend": {
         daily: [
-            { day: "Mon", wtd: 0.364, ncr: null, tm: "Tomos" },
-            { day: "Tue", wtd: 0.455, ncr: 0.0, tm: "Trudy" },
-            { day: "Wed", wtd: 0.579, ncr: 0.0, tm: "Trudy" },
-            { day: "Thu", wtd: 0.524, ncr: null, tm: "Trudy" },
-            { day: "Fri", wtd: 0.422, ncr: 0.333, tm: "Trudy" },
-            { day: "Sat", wtd: 0.214, ncr: 0.0, tm: "Tomos" },
-            { day: "Sun", wtd: 0.344, ncr: 0.0, tm: "Tomos" }
+            { day: "Mon", wtd: 0.458, ncr: null, tm: "Tomos" },
+            { day: "Tue", wtd: 0.222, ncr: 0.0, tm: "Tomos" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Lucy/Trudy" },
+            { day: "Thu", wtd: 0.586, ncr: 0.0, tm: "Trudy" },
+            { day: "Fri", wtd: 0.441, ncr: 0.167, tm: "Trudy" },
+            { day: "Sat", wtd: 0.711, ncr: 1.0, tm: "Trudy" },
+            { day: "Sun", wtd: 0.577, ncr: 1.0, tm: "Tomos" }
         ]
     },
     "Merthyr": {
         daily: [
-            { day: "Mon", wtd: 0.724, ncr: null, tm: "Lauren" },
-            { day: "Tue", wtd: 0.643, ncr: 1.0, tm: "Lucy" },
-            { day: "Wed", wtd: 0.667, ncr: 0.333, tm: "James D" },
-            { day: "Thu", wtd: 0.464, ncr: 0.0, tm: "James D" },
-            { day: "Fri", wtd: 0.489, ncr: 0.0, tm: "James D" },
-            { day: "Sat", wtd: 0.514, ncr: 0.0, tm: "Lauren" },
-            { day: "Sun", wtd: 0.333, ncr: null, tm: "Lauren" }
+            { day: "Mon", wtd: 0.581, ncr: 0.0, tm: "James D" },
+            { day: "Tue", wtd: 0.828, ncr: 0.667, tm: "Lucy" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Lauren" },
+            { day: "Thu", wtd: 0.667, ncr: 0.333, tm: "Lucy/Lauren" },
+            { day: "Fri", wtd: 0.6, ncr: 0.0, tm: "James D" },
+            { day: "Sat", wtd: 0.833, ncr: 1.0, tm: "Lucy" },
+            { day: "Sun", wtd: 0.545, ncr: 1.0, tm: "Lauren" }
         ]
     },
     "Rumney": {
         daily: [
-            { day: "Mon", wtd: 0.486, ncr: null, tm: "Lucy" },
-            { day: "Tue", wtd: 0.28, ncr: 0.0, tm: "James D" },
-            { day: "Wed", wtd: 0.394, ncr: 0.0, tm: "Ross" },
-            { day: "Thu", wtd: 0.389, ncr: 0.0, tm: "Ross" },
-            { day: "Fri", wtd: 0.314, ncr: null, tm: "Ross" },
-            { day: "Sat", wtd: 0.447, ncr: 0.0, tm: "Ross" },
-            { day: "Sun", wtd: 0.458, ncr: 0.0, tm: "James D" }
+            { day: "Mon", wtd: 0.433, ncr: 0.0, tm: "Ross" },
+            { day: "Tue", wtd: 0.464, ncr: 0.5, tm: "James D" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Ross" },
+            { day: "Thu", wtd: 0.444, ncr: 0.333, tm: "James D" },
+            { day: "Fri", wtd: 0.652, ncr: 1.0, tm: "Lucy" },
+            { day: "Sat", wtd: 0.421, ncr: 0.25, tm: "James" },
+            { day: "Sun", wtd: 0.556, ncr: null, tm: "Ross" }
         ]
     },
     "Madeley": {
         daily: [
-            { day: "Mon", wtd: 0.69, ncr: null, tm: "Jordan/Paul P" },
-            { day: "Tue", wtd: 0.722, ncr: 0.0, tm: "Rachael" },
-            { day: "Wed", wtd: 0.512, ncr: 0.0, tm: "Rachael" },
-            { day: "Thu", wtd: 0.595, ncr: 0.4, tm: "Rachael/Paul P" },
-            { day: "Fri", wtd: 0.654, ncr: 0.0, tm: "Paul P" },
-            { day: "Sat", wtd: 0.794, ncr: 0.5, tm: "Paul P/Ryen" },
-            { day: "Sun", wtd: 0.789, ncr: 0.0, tm: "Rachael" }
+            { day: "Mon", wtd: 0.8, ncr: 0.667, tm: "Paul P" },
+            { day: "Tue", wtd: 0.676, ncr: 0.333, tm: "Paul P" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Paul P" },
+            { day: "Thu", wtd: 0.732, ncr: 0.333, tm: "Paul P/Ryen" },
+            { day: "Fri", wtd: 0.859, ncr: 0.333, tm: "Rach" },
+            { day: "Sat", wtd: 0.896, ncr: 1.0, tm: "Rach" },
+            { day: "Sun", wtd: 0.688, ncr: 1.0, tm: "Paul P" }
         ]
     },
     "Shrewsbury": {
         daily: [
-            { day: "Mon", wtd: 0.3, ncr: null, tm: "Dominic" },
-            { day: "Tue", wtd: 0.52, ncr: null, tm: "Liviu" },
-            { day: "Wed", wtd: 0.344, ncr: 0.0, tm: "Dominic" },
-            { day: "Thu", wtd: 0.261, ncr: 0.0, tm: "Liviu" },
-            { day: "Fri", wtd: 0.27, ncr: 0.0, tm: "Dominic" },
-            { day: "Sat", wtd: 0.477, ncr: 0.333, tm: "Dominic" },
+            { day: "Mon", wtd: 0.353, ncr: 0.25, tm: "Dominic" },
+            { day: "Tue", wtd: 0.697, ncr: 0.75, tm: "Rach/Liviu" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Rach/Liviu" },
+            { day: "Thu", wtd: 0.72, ncr: 0.833, tm: "Rach/Dominic" },
+            { day: "Fri", wtd: 0.5, ncr: 0.667, tm: "Dominic" },
+            { day: "Sat", wtd: 0.644, ncr: 0.714, tm: "Dominic" },
             { day: "Sun", wtd: null, ncr: null, tm: "DNT" }
         ]
     },
     "Wellington": {
         daily: [
-            { day: "Mon", wtd: 0.517, ncr: null, tm: "Liviu" },
-            { day: "Tue", wtd: 0.412, ncr: 0.0, tm: "Ryen" },
-            { day: "Wed", wtd: 0.2, ncr: 0.0, tm: "Ryen" },
-            { day: "Thu", wtd: 0.6, ncr: null, tm: "Ryen" },
-            { day: "Fri", wtd: 0.55, ncr: 0.0, tm: "Rachael" },
-            { day: "Sat", wtd: 0.447, ncr: 0.0, tm: "Liviu" },
+            { day: "Mon", wtd: 0.917, ncr: null, tm: "Andy" },
+            { day: "Tue", wtd: 0.76, ncr: 0.5, tm: "Ryen" },
+            { day: "Wed", wtd: null, ncr: null, tm: "Ryen" },
+            { day: "Thu", wtd: 0.708, ncr: 1.0, tm: "Andy" },
+            { day: "Fri", wtd: 0.464, ncr: 0.5, tm: "Ryen/Liviu" },
+            { day: "Sat", wtd: 0.609, ncr: 0.0, tm: "Andy" },
             { day: "Sun", wtd: null, ncr: null, tm: "DNT" }
         ]
     }
@@ -396,7 +396,7 @@ storeKeys.forEach(key => {
 });
 
 const areaWtdAvg = totalWtdDailyCount > 0 ? totalWtdSum / totalWtdDailyCount : 0;
-const areaNcrAvg = totalNcrDailyCount > 0 ? totalNcrDailySum / totalNcrDailyCount : 0; 
+const areaNcrAvg = totalNcrDailyCount > 0 ? totalNcrDailySum / totalNcrDailyCount : 0;
 
 // Helper function for Area Summary bar HTML
 function generateSummaryBar(title, value, colorClass, highlightThreshold) {
@@ -461,6 +461,9 @@ const sortedStores = Object.entries(allStoresData).map(([name, data]) => {
         ...averages,
     };
 }).sort((a, b) => b.wtdAvg - a.wtdAvg);
+
+// Clear the container before populating
+wtdContainer.innerHTML = '';
 
 sortedStores.forEach(store => {
     const { storeName, wtdAvg, ncaAvg, daily } = store;
@@ -564,7 +567,7 @@ sortedStores.forEach(store => {
 });
 
 
-// 3. Team Member Trends Section 
+// 3. Team Member Trends Section
 const teamMembers = {};
 Object.values(allStoresData).forEach(store => {
     store.daily.forEach(day => {
@@ -573,24 +576,24 @@ Object.values(allStoresData).forEach(store => {
             const tms = day.tm.split('/').map(t => t.trim());
             tms.forEach(tm => {
                 if (!teamMembers[tm]) {
-                    teamMembers[tm] = { 
-                        totalPercent: 0, 
-                        dayCount: 0, 
-                        highDays: 0, 
-                        lowDays: 0, 
-                        hasData: true, 
-                        ncrTotal: 0, 
-                        ncrDayCount: 0 
+                    teamMembers[tm] = {
+                        totalPercent: 0,
+                        dayCount: 0,
+                        highDays: 0,
+                        lowDays: 0,
+                        hasData: true,
+                        ncrTotal: 0,
+                        ncrDayCount: 0
                     };
                 }
                 // WTD Tracking (credited fully to each team member listed)
                 teamMembers[tm].totalPercent += day.wtd;
                 teamMembers[tm].dayCount += 1;
-                
+
                 // NCA Tracking: ONLY counts if ncr is NOT null
                 if (day.ncr !== null) {
-                    teamMembers[tm].ncrTotal += day.ncr; 
-                    teamMembers[tm].ncrDayCount += 1; 
+                    teamMembers[tm].ncrTotal += day.ncr;
+                    teamMembers[tm].ncrDayCount += 1;
                 }
 
                 // High/Low day tracking based on WTD
@@ -612,17 +615,20 @@ const sortedTeamMembers = Object.entries(teamMembers).sort(([, a], [, b]) => {
     return bAvg - aAvg;
 });
 
+// Clear the container before populating
+teamMemberTrendsContainer.innerHTML = '';
+
 sortedTeamMembers.forEach(([tmName, tmData]) => {
     const avgPercent = tmData.dayCount > 0 ? (tmData.totalPercent / tmData.dayCount * 100).toFixed(1) : 'N/A';
-    
+
     // Calculate Average NCA - Only divides by days with actual NCA data
     const avgNca = tmData.ncrDayCount > 0 ? (tmData.ncrTotal / tmData.ncrDayCount * 100).toFixed(1) : 'N/A';
-    
+
     const ncaColor = avgNca !== 'N/A' && parseFloat(avgNca) >= 70.0 ? 'text-purple-600' : 'text-gray-500';
-    
+
     // CONSISTENCY FIX: Use parseFloat for safer numeric comparison
     const isHighFlier = avgPercent !== 'N/A' && parseFloat(avgPercent) >= 50.0;
-    
+
     const tmCardColor = isHighFlier ? 'border-green-500' : 'border-red-500';
     const tmIcon = isHighFlier ? '🌟' : '💡'; // Star for high-fliers, bulb for focus areas
 
