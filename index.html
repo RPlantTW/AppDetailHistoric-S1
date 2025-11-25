@@ -5,339 +5,375 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>South 1 App Adoption</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<!--
+*
+* Styling & Fonts
+*
+-->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 body {
-    font-family: 'Inter', sans-serif;
-    /* Tailwind classes used on body for background/color, but keeping Inter font */
+    font-family: 'Inter', sans-serif;
+    /* Tailwind classes used on body for background/color, but keeping Inter font */
 }
 .full-bleed-container {
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 .section {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem; /* Increased margin for better separation */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem; /* Increased margin for better separation */
 }
 .progress-bar-container {
-    width: 100%;
-    background-color: #e5e7eb;
-    border-radius: 9999px;
-    overflow: hidden;
-    height: 1.5rem; /* 24px */
+    width: 100%;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    height: 1.5rem; /* 24px */
 }
 .progress-bar {
-    height: 100%;
-    transition: width 0.5s ease-in-out;
-    text-align: right;
-    padding-right: 0.5rem;
-    font-weight: 600;
-    color: white;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 0.875rem;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+    text-align: right;
+    padding-right: 0.5rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.875rem;
 }
 /* Adjusted grid for daily cards to look good on mobile */
 .daily-grid {
-    display: grid;
-    gap: 0.75rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 @media (min-width: 640px) {
-    .daily-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    .daily-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 @media (min-width: 1024px) {
-    .daily-grid {
-        grid-template-columns: repeat(7, minmax(0, 1fr));
-    }
+    .daily-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
 }
 .daily-card {
-    padding: 0.75rem;
+    padding: 0.75rem;
 }
 </style>
 </head>
 <body class="bg-gray-100 text-gray-800 p-4 sm:p-8">
 <div class="full-bleed-container">
+<!--
+*
+* Main HTML Structure
+*
+-->
 <div class="container">
-        <header class="text-center mb-8 sm:mb-12">
-        <h1 class="text-3xl sm:text-5xl font-bold text-blue-800 mb-6">South 1 App Adoption</h1>
-        <p class="mt-4 text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-            New customers represent our biggest opportunity to grow our active customer base. This infographic focuses on the key trend data, ensuring we maximise our efforts, especially with new customers, as recent figures show new customers who download the app are retained more than twice as often laying the foundation for future growth and success.
-        </p>
-    </header>
+    <!-- Header Section: Focused on New Customer Adoption -->
+    <header class="text-center mb-8 sm:mb-12">
+        <h1 class="text-3xl sm:text-5xl font-bold text-blue-800 mb-2">South 1 App Adoption</h1>
+        <!-- NEW: Week Ending Date -->
+        <p class="text-sm sm:text-base font-semibold text-gray-600 mb-6">
+            Week Ending: Saturday, 22nd November 2025
+        </p>
+        <p class="mt-4 text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+            New customers represent our biggest opportunity to grow our active customer base. This infographic focuses on the key trend data, ensuring we maximise our efforts, especially with new customers, as recent figures show new customers who download the app are retained more than twice as often laying the foundation for future growth and success.
+        </p>
+    </header>
 
-        <div class="section bg-yellow-100 border-l-4 border-yellow-500 mb-8">
-        <h3 class="text-xl sm:text-2xl font-bold text-yellow-800 text-center mb-4">LIVE<br>App Exclusive Offers</h3>
-        <div class="md:flex md:space-x-4 space-y-4 md:space-y-0">
-                        <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
-                <h4 class="text-lg font-bold text-yellow-900 mb-2">New Customers</h4>
-                <p class="text-xl font-extrabold text-yellow-900">
-                    <span id="new-customer-offer-text">
-                        App £5 sign up - NC ONLY
-                    </span>
-                </p>
-                <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
-                    <p class="font-bold text-center">Terms</p>
-                    <ul class="list-disc ml-4 mt-2 space-y-1">
-                        <li>Only available to customers on their first in-store purchase</li>
-                        <li>Minimum spend of £10 (before the £5 is removed)</li>
-                        <li>Must download the app in-store and prove that they have it</li>
-                                                <li>Use code 'App £5 sign up - NC ONLY' when applying the £5 discount.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- NEW SECTION: Current App Promotion Box (Updated for split offers) -->
+    <div class="section bg-yellow-100 border-l-4 border-yellow-500 mb-8">
+        <h3 class="text-xl sm:text-2xl font-bold text-yellow-800 text-center mb-4">LIVE<br>App Exclusive Offers</h3>
+        <div class="md:flex md:space-x-4 space-y-4 md:space-y-0">
+            <!-- Box 1: New Customer Offer (UPDATED TEXT) -->
+            <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
+                <h4 class="text-lg font-bold text-yellow-900 mb-2">New Customers</h4>
+                <p class="text-xl font-extrabold text-yellow-900">
+                    <span id="new-customer-offer-text">
+                        App £5 sign up - NC ONLY
+                    </span>
+                </p>
+                <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
+                    <p class="font-bold text-center">Terms</p>
+                    <ul class="list-disc ml-4 mt-2 space-y-1">
+                        <li>Only available to customers on their first in-store purchase</li>
+                        <li>Minimum spend of £10 (before the £5 is removed)</li>
+                        <li>Must download the app in-store and prove that they have it</li>
+                        <!-- CORRECTED: Updated the discount code line -->
+                        <li>Use code 'App £5 sign up - NC ONLY' when applying the £5 discount.</li>
+                    </ul>
+                </div>
+            </div>
 
-                        <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
-                <h4 class="text-lg font-bold text-yellow-900 mb-2">Current Offer: 25% Trade-in</h4>
-                <p class="text-xl font-extrabold text-yellow-900">
-                    <span id="existing-customer-offer-text">
-                        Trade in your old e-cig and receive 25% off a brand new one!
-                    </span>
-                </p>
-                <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
-                    <p class="font-bold mb-2">Details</p>
-                    <ul class="list-disc ml-4 mt-2 space-y-1">
-                        <li>Valid until Sunday 26th October.</li>
-                        <li>We'll even recycle your old kit.</li>
-                        <li>Use code ‘Trade-in' when providing the discount.</li>
-                        <li>Further discounts **cannot** be used in conjunction with this offer.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-            <div class="section bg-red-100 border-l-4 border-red-500">
-        <h3 class="text-lg sm:text-xl font-bold text-red-800 text-center">Expectation</h3>
-        <p class="mt-2 text-sm sm:text-base text-red-700 max-w-2xl mx-auto text-center font-semibold">
-            While every store has the potential for a turbulent day, there is no reason for any store to be trending in the 40%s at this stage. Our expectation is for all stores to take immediate action to shift the dial with action steps being communicated through Yoobic briefings
-        </p>
-    </div>
+            <!-- Box 2: Existing Customer Offer (UPDATED TO 25% TRADE-IN) -->
+            <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
+                <h4 class="text-lg font-bold text-yellow-900 mb-2">Current Offer: 25% Trade-in</h4>
+                <p class="text-xl font-extrabold text-yellow-900">
+                    <span id="existing-customer-offer-text">
+                        Trade in your old e-cig and receive 25% off a brand new one!
+                    </span>
+                </p>
+                <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
+                    <p class="font-bold mb-2">Details</p>
+                    <ul class="list-disc ml-4 mt-2 space-y-1">
+                        <li>Valid until Sunday 26th October.</li>
+                        <li>We'll even recycle your old kit.</li>
+                        <li>Use code ‘Trade-in' when providing the discount.</li>
+                        <li>Further discounts **cannot** be used in conjunction with this offer.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NEW SECTION -->
 
-        <div class="section">
-        <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 text-center">Area Performance Summary</h3>
-        <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
-            This summarises the performance across all stores, highlighting overall area success and opportunities for improvement.
-        </p>
-        <div id="area-summary-container" class="space-y-6 max-w-2xl mx-auto">
-                    </div>
-    </div>
-            <div class="section">
-        <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 text-center">Where We Stand: Store Performance Overview (WTD & NCA)</h3>
-        <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
-            This view shows the Week-to-Date performance for **Overall App Adoption** and **New Customer Adoption (NCA)**, followed by the daily breakdown.
-        </p>
-        <div id="wtd-container" class="space-y-4 sm:space-y-6">
-                    </div>
-    </div>
+    <!-- New Section: Explicitly addressing the 20%s (Expectation remains) -->
+    <div class="section bg-red-100 border-l-4 border-red-500">
+        <h3 class="text-lg sm:text-xl font-bold text-red-800 text-center">Expectation</h3>
+        <p class="mt-2 text-sm sm:text-base text-red-700 max-w-2xl mx-auto text-center font-semibold">
+            While every store has the potential for a turbulent day, there is no reason for any store to be trending in the 60%s at this stage. Our expectation is for all stores to take immediate action to shift the dial with action steps being communicated through Yoobic briefings
+        </p>
+    </div>
 
-        <div class="section">
-        <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 text-center">Team Member Trends: High-Fliers and Areas for Focus</h3>
-        <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
-            This data helps to identify consistent performers to learn from, as well as team members who may need support with delivery or consistency.
-        </p>
-        <div id="team-member-trends" class="space-y-4 sm:space-y-6">
-                    </div>
-    </div>
+    <!-- NEW SECTION: Area Summary Charts -->
+    <div class="section">
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 text-center">Area Performance Summary</h3>
+        <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
+            This summarises the performance across all stores, highlighting overall area success and opportunities for improvement.
+        </p>
+        <div id="area-summary-container" class="space-y-6 max-w-2xl mx-auto">
+            <!-- Data will be populated here by JavaScript -->
+        </div>
+    </div>
+    <!-- END NEW SECTION -->
 
-        <div class="section bg-blue-100 border-l-4 border-blue-500">
-        <h3 class="text-lg sm:text-xl font-bold text-blue-800 text-center">Which Side of the Coin Are You On?</h3>
-        <p class="mt-2 text-sm sm:text-base text-blue-700 max-w-2xl mx-auto text-center font-semibold">
-            Ultimately, your individual effort is either positively affecting the store, cluster, and area performance or dragging it down. This detail should help you identify which side of the coin you are currently placed on.
-        </p>
-    </div>
+    <!-- WTD Performance Section (NOW INCLUDES STACKED WTD BARS AND DAILY NCA) -->
+    <div class="section">
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 text-center">Where We Stand: Store Performance Overview (WTD & NCA)</h3>
+        <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
+            This view shows the Week-to-Date performance for **Overall App Adoption** and **New Customer Adoption (NCA)**, followed by the daily breakdown.
+        </p>
+        <div id="wtd-container" class="space-y-4 sm:space-y-6">
+            <!-- Data will be populated here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Team Member Trends Section -->
+    <div class="section">
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 text-center">Team Member Trends: High-Fliers and Areas for Focus</h3>
+        <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
+            This data helps to identify consistent performers to learn from, as well as team members who may need support with delivery or consistency.
+        </p>
+        <div id="team-member-trends" class="space-y-4 sm:space-y-6">
+            <!-- Data will be populated here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Which Side of the Coin Section -->
+    <div class="section bg-blue-100 border-l-4 border-blue-500">
+        <h3 class="text-lg sm:text-xl font-bold text-blue-800 text-center">Which Side of the Coin Are You On?</h3>
+        <p class="mt-2 text-sm sm:text-base text-blue-700 max-w-2xl mx-auto text-center font-semibold">
+            Ultimately, your individual effort is either positively affecting the store, cluster, and area performance or dragging it down. This detail should help you identify which side of the coin you are currently placed on.
+        </p>
+    </div>
 </div>
+<!--
+*
+* JavaScript Logic
+*
+-->
 <script>
 // Data Structure: 'daily' contains 'wtd' (overall adoption)
 // Data has been UPDATED with the new week's adoption details
 const allStoresData = {
-    "Bristol": {
-        daily: [
-            { day: "Mon", wtd: 0.837, ncr: 0.78, tm: "Paul T / Mike" },
-            { day: "Tue", wtd: 0.667, ncr: 0.2, tm: "Mike / Taryn" },
-            { day: "Wed", wtd: 0.824, ncr: 0.6, tm: "Paul T / Taryn" },
-            { day: "Thu", wtd: 0.768, ncr: 0.778, tm: "Paul T / Mike" },
-            { day: "Fri", wtd: 0.725, ncr: 0.4, tm: "Mike / Taryn" },
-            { day: "Sat", wtd: 0.674, ncr: 0.222, tm: "Mike / Josh B" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Josh B" }
-        ]
-    },
-    "Gloucester": {
-        daily: [
-            { day: "Mon", wtd: 0.5, ncr: 0.0, tm: "Dan W / Dan F" },
-            { day: "Tue", wtd: 0.615, ncr: 1.0, tm: "Dan F" },
-            { day: "Wed", wtd: 0.55, ncr: 1.0, tm: "Dan W / Dan F" },
-            { day: "Thu", wtd: 0.65, ncr: null, tm: "Dan F" },
-            { day: "Fri", wtd: 0.45, ncr: null, tm: "Dan W / Dan F" },
-            { day: "Sat", wtd: 0.6, ncr: 0.5, tm: "Dan W" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Dan W" }
-        ]
-    },
-    "Nottingham": {
-        daily: [
-            { day: "Mon", wtd: 0.714, ncr: null, tm: "Eve" },
-            { day: "Tue", wtd: 0.591, ncr: 0.0, tm: "Nicole" },
-            { day: "Wed", wtd: 0.813, ncr: 0.333, tm: "Tyler" },
-            { day: "Thu", wtd: 0.571, ncr: 0.0, tm: "Eve / Tyler" },
-            { day: "Fri", wtd: 0.571, ncr: 0.0, tm: "Eve / Nicole" },
-            { day: "Sat", wtd: 0.647, ncr: 0.0, tm: "Eve" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Eve" }
-        ]
-    },
-    "Rugby": {
-        daily: [
-            { day: "Mon", wtd: 0.522, ncr: null, tm: "Raf" },
-            { day: "Tue", wtd: 0.722, ncr: 1.0, tm: "Raf" },
-            { day: "Wed", wtd: 0.7, ncr: 0.0, tm: "Jenna" },
-            { day: "Thu", wtd: 0.4, ncr: 1.0, tm: "Raf / Jenna" },
-            { day: "Fri", wtd: 0.857, ncr: null, tm: "Jenna" },
-            { day: "Sat", wtd: 0.667, ncr: 1.0, tm: "Raf" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Null" }
-        ]
-    },
-    "Barnstaple": {
-        daily: [
-            { day: "Mon", wtd: 0.593, ncr: 1.0, tm: "Shannon / Matt" },
-            { day: "Tue", wtd: 0.667, ncr: 1.0, tm: "Simonas" },
-            { day: "Wed", wtd: 0.455, ncr: null, tm: "Simonas" },
-            { day: "Thu", wtd: 0.481, ncr: 0.667, tm: "Simonas" },
-            { day: "Fri", wtd: 0.45, ncr: null, tm: "Simonas / Matt" },
-            { day: "Sat", wtd: 0.667, ncr: null, tm: "Matt" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Matt" }
-        ]
-    },
-    "Exeter": {
-        daily: [
-            { day: "Mon", wtd: 0.545, ncr: 0.75, tm: "Ash / Zoe" },
-            { day: "Tue", wtd: 0.677, ncr: 1.0, tm: "Zoe" },
-            { day: "Wed", wtd: 0.796, ncr: 0.875, tm: "Shannon / Ash" },
-            { day: "Thu", wtd: 0.447, ncr: 0.667, tm: "Shannon / Ash" },
-            { day: "Fri", wtd: 0.761, ncr: 0.714, tm: "Shannon / Ash" },
-            { day: "Sat", wtd: 0.622, ncr: 0.7, tm: "Shannon / Zoe" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Zoe" }
-        ]
-    },
-    "Birmingham": {
-        daily: [
-            { day: "Mon", wtd: 0.278, ncr: 1.0, tm: "Danni" },
-            { day: "Tue", wtd: 0.55, ncr: 0.5, tm: "Danni" },
-            { day: "Wed", wtd: 0.5, ncr: null, tm: "Danni" },
-            { day: "Thu", wtd: 0.375, ncr: 0.5, tm: "Danni" },
-            { day: "Fri", wtd: 0.467, ncr: 0.0, tm: "Deion" },
-            { day: "Sat", wtd: 0.333, ncr: 0.0, tm: "Deion" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Null" }
-        ]
-    },
-    "Tyburn": {
-        daily: [
-            { day: "Mon", wtd: 0.636, ncr: null, tm: "Mike B" },
-            { day: "Tue", wtd: 0.313, ncr: null, tm: "Mike B" },
-            { day: "Wed", wtd: 0.2, ncr: 0.0, tm: "Mike B" },
-            { day: "Thu", wtd: 0.375, ncr: null, tm: "Mike B" },
-            { day: "Fri", wtd: 0.182, ncr: 0.0, tm: "Mike B" },
-            { day: "Sat", wtd: 0.357, ncr: null, tm: "Danni" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Deion" }
-        ]
-    },
-    "Chapel Ash": {
-        daily: [
-            { day: "Mon", wtd: 0.609, ncr: null, tm: "Josh T" },
-            { day: "Tue", wtd: 0.667, ncr: 0.0, tm: "Josh T" },
-            { day: "Wed", wtd: 0.778, ncr: null, tm: "Josh T" },
-            { day: "Thu", wtd: 0.609, ncr: null, tm: "Josh T" },
-            { day: "Fri", wtd: 0.563, ncr: null, tm: "Jess / Josh T" },
-            { day: "Sat", wtd: 0.8, ncr: null, tm: "Jess" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Jess" }
-        ]
-    },
-    "Penn Road": {
-        daily: [
-            { day: "Mon", wtd: 0.667, ncr: null, tm: "Reece" },
-            { day: "Tue", wtd: 0.5, ncr: null, tm: "Jess" },
-            { day: "Wed", wtd: 0.429, ncr: 0.0, tm: "Gaynor" },
-            { day: "Thu", wtd: 0.545, ncr: 0.0, tm: "Gaynor" },
-            { day: "Fri", wtd: 0.692, ncr: null, tm: "Gaynor / Reece" },
-            { day: "Sat", wtd: 0.8, ncr: 0.0, tm: "Reece" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Null" }
-        ]
-    },
-    "Bridgend": {
-        daily: [
-            { day: "Mon", wtd: 0.706, ncr: 0.0, tm: "Lucy / Tomos" },
-            { day: "Tue", wtd: 0.448, ncr: 0.5, tm: "Trudy" },
-            { day: "Wed", wtd: 0.704, ncr: 1.0, tm: "Trudy" },
-            { day: "Thu", wtd: 0.56, ncr: 0.0, tm: "Lucy / Tomos" },
-            { day: "Fri", wtd: 0.576, ncr: null, tm: "Tomos" },
-            { day: "Sat", wtd: 0.575, ncr: 0.5, tm: "Trudy" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Trudy" }
-        ]
-    },
-    "Merthyr": {
-        daily: [
-            { day: "Mon", wtd: 0.714, ncr: 0.0, tm: "James D" },
-            { day: "Tue", wtd: 0.583, ncr: 0.0, tm: "Lauren" },
-            { day: "Wed", wtd: 0.519, ncr: 0.0, tm: "James D" },
-            { day: "Thu", wtd: 0.727, ncr: 1.0, tm: "James D" },
-            { day: "Fri", wtd: 0.769, ncr: null, tm: "Lucy" },
-            { day: "Sat", wtd: 0.757, ncr: 0.0, tm: "Lucy / Lauren" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Lauren" }
-        ]
-    },
-    "Rumney": {
-        daily: [
-            { day: "Mon", wtd: 0.368, ncr: 0.0, tm: "Ross" },
-            { day: "Tue", wtd: 0.5, ncr: null, tm: "Lucy / Harmony" },
-            { day: "Wed", wtd: 0.686, ncr: null, tm: "Ross" },
-            { day: "Thu", wtd: 0.361, ncr: 0.0, tm: "Ross" },
-            { day: "Fri", wtd: 0.585, ncr: 0.0, tm: "James D / Harmony" },
-            { day: "Sat", wtd: 0.415, ncr: 1.0, tm: "James D" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Ross" }
-        ]
-    },
-    "Madeley": {
-        daily: [
-            { day: "Mon", wtd: 0.825, ncr: 1.0, tm: "Rach" },
-            { day: "Tue", wtd: 0.737, ncr: 0.0, tm: "Gaynor" },
-            { day: "Wed", wtd: 0.742, ncr: 0.333, tm: "Paul P" },
-            { day: "Thu", wtd: 0.868, ncr: 1.0, tm: "Rach / Paul P" },
-            { day: "Fri", wtd: 0.821, ncr: 1.0, tm: "Rach / Paul P" },
-            { day: "Sat", wtd: 0.78, ncr: 1.0, tm: "Rach" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Rach" }
-        ]
-    },
-    "Shrewsbury": {
-        daily: [
-            { day: "Mon", wtd: 0.583, ncr: 0.0, tm: "Liviu / Paul P" },
-            { day: "Tue", wtd: 0.75, ncr: null, tm: "Paul P" },
-            { day: "Wed", wtd: 0.758, ncr: 1.0, tm: "Rach" },
-            { day: "Thu", wtd: 0.714, ncr: 0.5, tm: "Liviu" },
-            { day: "Fri", wtd: 0.68, ncr: 1.0, tm: "Liviu" },
-            { day: "Sat", wtd: 0.711, ncr: 0.2, tm: "Liviu" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Null" }
-        ]
-    },
-    "Wellington": {
-        daily: [
-            { day: "Mon", wtd: 0.7, ncr: 0.5, tm: "Ryen" },
-            { day: "Tue", wtd: 0.64, ncr: 0.5, tm: "Ryen" },
-            { day: "Wed", wtd: 0.647, ncr: null, tm: "Andy" },
-            { day: "Thu", wtd: 0.875, ncr: 0.0, tm: "Andy" },
-            { day: "Fri", wtd: 0.65, ncr: 0.5, tm: "Andy / Ryen" },
-            { day: "Sat", wtd: 0.711, ncr: 0.667, tm: "Ryen" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Null" }
-        ]
-    }
+    "Bristol": {
+        daily: [
+            { day: "Mon", wtd: 0.750, ncr: 0.71, tm: "Paul T/Mike Burke" },
+            { day: "Tue", wtd: 0.595, ncr: 0.200, tm: "Paul T/Mike Burke" },
+            { day: "Wed", wtd: 0.667, ncr: 0.500, tm: "Paul T/Mike Burke/Taryn" },
+            { day: "Thu", wtd: 0.714, ncr: 0.375, tm: "Paul T/Josh B" },
+            { day: "Fri", wtd: 0.660, ncr: 0.333, tm: "Mike Burke/Taryn" },
+            { day: "Sat", wtd: 0.640, ncr: 0.400, tm: "Paul T/Mike" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Josh B" }
+        ]
+    },
+    "Gloucester": {
+        daily: [
+            { day: "Mon", wtd: 0.571, ncr: 1.000, tm: "Dan F/Dan W" },
+            { day: "Tue", wtd: 0.524, ncr: null, tm: "Dan F" },
+            { day: "Wed", wtd: 0.500, ncr: 1.000, tm: "Dan W" },
+            { day: "Thu", wtd: 0.720, ncr: 1.000, tm: "Dan W" },
+            { day: "Fri", wtd: 0.522, ncr: null, tm: "Dan W" },
+            { day: "Sat", wtd: 0.565, ncr: null, tm: "Dan F" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Dan F/Dan W" }
+        ]
+    },
+    "Nottingham": {
+        daily: [
+            { day: "Mon", wtd: 0.750, ncr: 0.333, tm: "Nicole/Tyler" },
+            { day: "Tue", wtd: 0.650, ncr: null, tm: "Eve" },
+            { day: "Wed", wtd: 0.708, ncr: 0.0, tm: "Eve/Tyler" },
+            { day: "Thu", wtd: 0.800, ncr: 1.000, tm: "Eve" },
+            { day: "Fri", wtd: 0.741, ncr: 0.0, tm: "Eve/Nicole/Tyler" },
+            { day: "Sat", wtd: 0.773, ncr: 1.000, tm: "Eve" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Tyler" }
+        ]
+    },
+    "Rugby": {
+        daily: [
+            { day: "Mon", wtd: 0.500, ncr: 0.0, tm: "Rafaela" },
+            { day: "Tue", wtd: 0.533, ncr: 1.000, tm: "Rafaela/Jenna" },
+            { day: "Wed", wtd: 0.353, ncr: 0.0, tm: "Jenna" },
+            { day: "Thu", wtd: 0.615, ncr: 0.0, tm: "Jenna" },
+            { day: "Fri", wtd: 0.474, ncr: 1.000, tm: "Rafaela" },
+            { day: "Sat", wtd: 0.455, ncr: 0.0, tm: "Rafaela/Jenna" },
+            { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
+        ]
+    },
+    "Barnstaple": {
+        daily: [
+            { day: "Mon", wtd: 0.531, ncr: null, tm: "Shannon" },
+            { day: "Tue", wtd: 0.655, ncr: 0.500, tm: "Shannon" },
+            { day: "Wed", wtd: 0.571, ncr: null, tm: "Matt" },
+            { day: "Thu", wtd: 0.409, ncr: null, tm: "Matt" },
+            { day: "Fri", wtd: 0.679, ncr: null, tm: "Ashley" },
+            { day: "Sat", wtd: 0.640, ncr: 0.0, tm: "Matt" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Matt" }
+        ]
+    },
+    "Exeter": {
+        daily: [
+            { day: "Mon", wtd: 0.706, ncr: 1.000, tm: "Ashley/Zoe" },
+            { day: "Tue", wtd: 0.719, ncr: 1.000, tm: "Zoe" },
+            { day: "Wed", wtd: 0.526, ncr: 0.667, tm: "Shannon" },
+            { day: "Thu", wtd: 0.778, ncr: 1.000, tm: "Shannon/Zoe/Ashley" },
+            { day: "Fri", wtd: 0.735, ncr: 0.429, tm: "Shannon/Zoe" },
+            { day: "Sat", wtd: 0.438, ncr: 0.600, tm: "Zoe/Ashley" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Ashley" }
+        ]
+    },
+    "Birmingham": {
+        daily: [
+            { day: "Mon", wtd: 0.500, ncr: null, tm: "Danielle" },
+            { day: "Tue", wtd: 0.333, ncr: 0.333, tm: "Reece" },
+            { day: "Wed", wtd: 0.556, ncr: 1.000, tm: "James W" },
+            { day: "Thu", wtd: 0.464, ncr: 0.667, tm: "Danielle" },
+            { day: "Fri", wtd: 1.000, ncr: 1.000, tm: "James W" },
+            { day: "Sat", wtd: 0.375, ncr: null, tm: "James W" },
+            { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
+        ]
+    },
+    "Tyburn": {
+        daily: [
+            { day: "Mon", wtd: 0.063, ncr: null, tm: "Deion" },
+            { day: "Tue", wtd: 0.0, ncr: null, tm: "Danielle" },
+            { day: "Wed", wtd: 0.375, ncr: null, tm: "Danielle" },
+            { day: "Thu", wtd: 0.500, ncr: null, tm: "Deion" },
+            { day: "Fri", wtd: 0.444, ncr: null, tm: "Deion" },
+            { day: "Sat", wtd: 0.500, ncr: null, tm: "Mike Bailey" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Mike Bailey" }
+        ]
+    },
+    "Chapel Ash": {
+        daily: [
+            { day: "Mon", wtd: 0.833, ncr: null, tm: "Josh T" },
+            { day: "Tue", wtd: 0.529, ncr: null, tm: "Josh T" },
+            { day: "Wed", wtd: 0.462, ncr: 1.000, tm: "Jess" },
+            { day: "Thu", wtd: 0.429, ncr: null, tm: "Josh T" },
+            { day: "Fri", wtd: 0.765, ncr: null, tm: "Josh T" },
+            { day: "Sat", wtd: 0.538, ncr: 0.0, tm: "Reece" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Reece" }
+        ]
+    },
+    "Penn Road": {
+        daily: [
+            { day: "Mon", wtd: 0.556, ncr: null, tm: "Gaynor" },
+            { day: "Tue", wtd: 0.500, ncr: null, tm: "Jess" },
+            { day: "Wed", wtd: 0.611, ncr: null, tm: "Josh T" },
+            { day: "Thu", wtd: 0.778, ncr: null, tm: "Jess" },
+            { day: "Fri", wtd: 0.385, ncr: null, tm: "Jess" },
+            { day: "Sat", wtd: 0.750, ncr: 1.000, tm: "Gaynor" },
+            { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
+        ]
+    },
+    "Bridgend": {
+        daily: [
+            { day: "Mon", wtd: 0.481, ncr: 0.0, tm: "Tomos" },
+            { day: "Tue", wtd: 0.586, ncr: 0.333, tm: "Tomos/Lucy" },
+            { day: "Wed", wtd: 0.657, ncr: 1.000, tm: "Trudy" },
+            { day: "Thu", wtd: 0.520, ncr: 1.000, tm: "Lucy" },
+            { day: "Fri", wtd: 0.677, ncr: 0.667, tm: "Trudy" },
+            { day: "Sat", wtd: 0.659, ncr: 0.500, tm: "Tomos" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Tomos" }
+        ]
+    },
+    "Merthyr": {
+        daily: [
+            { day: "Mon", wtd: 0.773, ncr: 0.0, tm: "James D/Lucy" },
+            { day: "Tue", wtd: 0.682, ncr: 0.0, tm: "James D" },
+            { day: "Wed", wtd: 0.696, ncr: null, tm: "Lucy" },
+            { day: "Thu", wtd: 0.542, ncr: 0.0, tm: "Lauren" },
+            { day: "Fri", wtd: 0.795, ncr: 0.500, tm: "James D/Lucy" },
+            { day: "Sat", wtd: 0.520, ncr: 0.0, tm: "Lauren" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Lauren" }
+        ]
+    },
+    "Rumney": {
+        daily: [
+            { day: "Mon", wtd: 0.500, ncr: null, tm: "Ross" },
+            { day: "Tue", wtd: 0.442, ncr: null, tm: "Harmony" },
+            { day: "Wed", wtd: 0.486, ncr: 0.0, tm: "James D" },
+            { day: "Thu", wtd: 0.640, ncr: 1.000, tm: "James D" },
+            { day: "Fri", wtd: 0.480, ncr: 0.0, tm: "Lucy/Ross" },
+            { day: "Sat", wtd: 0.514, ncr: 0.500, tm: "Harmony" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Ross" }
+        ]
+    },
+    "Madeley": {
+        daily: [
+            { day: "Mon", wtd: 0.787, ncr: null, tm: "Paul P" },
+            { day: "Tue", wtd: 0.775, ncr: 0.500, tm: "Rachael" },
+            { day: "Wed", wtd: 0.903, ncr: 1.000, tm: "Paul P" },
+            { day: "Thu", wtd: 0.889, ncr: 0.667, tm: "Paul P/Rachael" },
+            { day: "Fri", wtd: 0.792, ncr: 0.500, tm: "Paul P" },
+            { day: "Sat", wtd: 0.783, ncr: 0.778, tm: "Rachael" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Rachael" }
+        ]
+    },
+    "Shrewsbury": {
+        daily: [
+            { day: "Mon", wtd: 0.571, ncr: 0.0, tm: "Liviu" },
+            { day: "Tue", wtd: 0.429, ncr: 0.0, tm: "Liviu" },
+            { day: "Wed", wtd: 0.824, ncr: 0.500, tm: "Rachael/Liviu" },
+            { day: "Thu", wtd: 0.606, ncr: 0.600, tm: "Liviu" },
+            { day: "Fri", wtd: 0.706, ncr: 0.667, tm: "Rachael" },
+            { day: "Sat", wtd: 0.741, ncr: 0.333, tm: "Ryen" },
+            { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
+        ]
+    },
+    "Wellington": {
+        daily: [
+            { day: "Mon", wtd: 0.739, ncr: 0.500, tm: "Andy" },
+            { day: "Tue", wtd: 0.632, ncr: 0.0, tm: "Ryen" },
+            { day: "Wed", wtd: 0.842, ncr: null, tm: "Andy" },
+            { day: "Thu", wtd: 0.591, ncr: 0.0, tm: "Ryen" },
+            { day: "Fri", wtd: 0.571, ncr: null, tm: "Ryen" },
+            { day: "Sat", wtd: 0.550, ncr: 0.0, tm: "Andy" },
+            { day: "Sun", wtd: null, ncr: null, tm: "null" }
+        ]
+    }
 };
 
 const wtdContainer = document.getElementById('wtd-container');
@@ -353,16 +389,16 @@ let totalNcrDailyCount = 0;
 
 // Calculate Area WTD and NCA WTD averages across all available daily data
 storeKeys.forEach(key => {
-    allStoresData[key].daily.forEach(day => {
-        if (day.wtd !== null) {
-            totalWtdSum += day.wtd;
-            totalWtdDailyCount += 1;
-        }
-        if (day.ncr !== null) {
-            totalNcrDailySum += day.ncr;
-            totalNcrDailyCount += 1;
-        }
-    });
+    allStoresData[key].daily.forEach(day => {
+        if (day.wtd !== null) {
+            totalWtdSum += day.wtd;
+            totalWtdDailyCount += 1;
+        }
+        if (day.ncr !== null) {
+            totalNcrDailySum += day.ncr;
+            totalNcrDailyCount += 1;
+        }
+    });
 });
 
 const areaWtdAvg = totalWtdDailyCount > 0 ? totalWtdSum / totalWtdDailyCount : 0;
@@ -370,29 +406,29 @@ const areaNcrAvg = totalNcrDailyCount > 0 ? totalNcrDailySum / totalNcrDailyCoun
 
 // Helper function for Area Summary bar HTML
 function generateSummaryBar(title, value, colorClass, highlightThreshold) {
-    const percentage = (value * 100).toFixed(1);
-    const isHigh = value >= highlightThreshold;
-    const barColor = isHigh ? colorClass : 'bg-gray-400';
-    const textColor = isHigh ? colorClass.replace('bg-', 'text-') : 'text-gray-700';
+    const percentage = (value * 100).toFixed(1);
+    const isHigh = value >= highlightThreshold;
+    const barColor = isHigh ? colorClass : 'bg-gray-400';
+    const textColor = isHigh ? colorClass.replace('bg-', 'text-') : 'text-gray-700';
 
-    return `
-        <div class="mb-4">
-            <p class="text-md font-semibold text-gray-700 mb-2 flex justify-between items-center">
-                <span>${title}</span>
-                <span class="font-bold text-xl ${textColor}">${percentage}%</span>
-            </p>
-            <div class="progress-bar-container">
-                <div class="progress-bar ${barColor}" style="width: ${Math.min(parseFloat(percentage), 100)}%;">
-                    ${percentage}%
-                </div>
-            </div>
-        </div>
-    `;
+    return `
+        <div class="mb-4">
+            <p class="text-md font-semibold text-gray-700 mb-2 flex justify-between items-center">
+                <span>${title}</span>
+                <span class="font-bold text-xl ${textColor}">${percentage}%</span>
+            </p>
+            <div class="progress-bar-container">
+                <div class="progress-bar ${barColor}" style="width: ${Math.min(parseFloat(percentage), 100)}%;">
+                    ${percentage}%
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 const areaSummaryHTML = `
-    ${generateSummaryBar("Area App Adoption Rate (WTD)", areaWtdAvg, "bg-green-500", 0.50)}
-    ${generateSummaryBar("Area New Customer Adoption Rate (NCA)", areaNcrAvg, "bg-purple-500", 0.70)}
+    ${generateSummaryBar("Area App Adoption Rate (WTD)", areaWtdAvg, "bg-green-500", 0.50)}
+    ${generateSummaryBar("Area New Customer Adoption Rate (NCA)", areaNcrAvg, "bg-purple-500", 0.70)}
 `;
 areaSummaryContainer.innerHTML = areaSummaryHTML;
 
@@ -400,222 +436,232 @@ areaSummaryContainer.innerHTML = areaSummaryHTML;
 // 1. WTD Performance Section
 // Helper function to calculate WTD averages for a single store
 function calculateStoreAverages(storeData) {
-    let totalWtd = 0;
-    let countWtd = 0;
-    let totalNca = 0;
-    let countNca = 0;
+    let totalWtd = 0;
+    let countWtd = 0;
+    let totalNca = 0;
+    let countNca = 0;
 
-    storeData.daily.forEach(day => {
-        if (day.wtd !== null) {
-            totalWtd += day.wtd;
-            countWtd += 1;
-        }
-        if (day.ncr !== null) {
-            totalNca += day.ncr;
-            countNca += 1;
-        }
-    });
+    storeData.daily.forEach(day => {
+        if (day.wtd !== null) {
+            totalWtd += day.wtd;
+            countWtd += 1;
+        }
+        if (day.ncr !== null) {
+            totalNca += day.ncr;
+            countNca += 1;
+        }
+    });
 
-    return {
-        wtdAvg: countWtd > 0 ? totalWtd / countWtd : 0,
-        ncaAvg: countNca > 0 ? totalNca / countNca : 0,
-    };
+    return {
+        wtdAvg: countWtd > 0 ? totalWtd / countWtd : 0,
+        ncaAvg: countNca > 0 ? totalNca / countNca : 0,
+    };
 }
 
 // 1. Sort stores based on the calculated WTD average (Overall Adoption)
 const sortedStores = Object.entries(allStoresData).map(([name, data]) => {
-    const averages = calculateStoreAverages(data);
-    return {
-        storeName: name,
-        ...data,
-        ...averages,
-    };
+    const averages = calculateStoreAverages(data);
+    return {
+        storeName: name,
+        ...data,
+        ...averages,
+    };
 }).sort((a, b) => b.wtdAvg - a.wtdAvg);
 
 // Clear the container before populating
 wtdContainer.innerHTML = '';
 
 sortedStores.forEach(store => {
-    const { storeName, wtdAvg, ncaAvg, daily } = store;
-    const wtdPercentage = (wtdAvg * 100).toFixed(1);
-    const ncaPercentage = (ncaAvg * 100).toFixed(1);
+    const { storeName, wtdAvg, ncaAvg, daily } = store;
+    const wtdPercentage = (wtdAvg * 100).toFixed(1);
+    const ncaPercentage = (ncaAvg * 100).toFixed(1);
 
-    // Styling for Overall WTD Bar
-    const isWtdStruggling = wtdAvg < 0.5;
-    const wtdBarColor = isWtdStruggling ? 'bg-red-500' : 'bg-green-500';
-    const wtdCardColor = isWtdStruggling ? 'border-red-500' : 'border-green-500';
+    // Styling for Overall WTD Bar
+    const isWtdStruggling = wtdAvg < 0.5;
+    const wtdBarColor = isWtdStruggling ? 'bg-red-500' : 'bg-green-500';
+    const wtdCardColor = isWtdStruggling ? 'border-red-500' : 'border-green-500';
 
-    // Styling for NCA WTD Bar (70% target)
-    const isNcaHigh = ncaAvg >= 0.70;
-    const ncaBarColor = isNcaHigh ? 'bg-purple-500' : 'bg-gray-400';
+    // Styling for NCA WTD Bar (70% target)
+    const isNcaHigh = ncaAvg >= 0.70;
+    const ncaBarColor = isNcaHigh ? 'bg-purple-500' : 'bg-gray-400';
 
-    // Generate HTML for the combined daily cards
-    const dailyDataHTML = daily.map(dayData => {
-        const wtdValue = dayData.wtd;
-        const ncrValue = dayData.ncr;
-        const tm = dayData.tm || 'N/A';
+    // Generate HTML for the combined daily cards
+    const dailyDataHTML = daily.map(dayData => {
+        const wtdValue = dayData.wtd;
+        const ncrValue = dayData.ncr;
+        const tm = dayData.tm || 'N/A';
 
-        if (wtdValue === null && ncrValue === null) {
-            // Scenario 1: Day not worked / Future day
-            return `
-                <div class="bg-white daily-card rounded-lg shadow-sm text-center border border-gray-200">
-                    <p class="text-sm font-semibold text-gray-500 mb-2">${dayData.day}</p>
-                    <p class="text-base text-gray-400 font-bold">N/A</p>
-                    <p class="text-xs text-gray-500 mt-2">${tm}</p>
-                </div>
-            `;
-        }
+        if (wtdValue === null && ncrValue === null) {
+            // Scenario 1: Day not worked / Future day
+            return `
+                <div class="bg-white daily-card rounded-lg shadow-sm text-center border border-gray-200">
+                    <p class="text-sm font-semibold text-gray-500 mb-2">${dayData.day}</p>
+                    <p class="text-base text-gray-400 font-bold">N/A</p>
+                    <p class="text-xs text-gray-500 mt-2">${tm}</p>
+                </div>
+            `;
+        }
 
-        // WTD styling (NO LABEL)
-        const wtdPercent = wtdValue !== null ? (wtdValue * 100).toFixed(1) : 'N/A';
-        const wtdClass = wtdValue !== null && wtdValue < 0.5 ? 'text-red-600' : (wtdValue !== null ? 'text-green-600' : 'text-gray-400');
+        // WTD styling (NO LABEL)
+        const wtdPercent = wtdValue !== null ? (wtdValue * 100).toFixed(1) : 'N/A';
+        // Check if WTD is below 30% for red text, otherwise green/gray
+        const wtdClass = wtdValue !== null && wtdValue < 0.3 ? 'text-red-600' : (wtdValue !== null ? 'text-green-600' : 'text-gray-400');
 
-        // NCA styling (70% threshold, uses NCA label)
-        const ncaPercent = ncrValue !== null ? (ncrValue * 100).toFixed(1) : 'N/A';
-        // Note: NCA is greyed out if data is N/A or below target. Purple is used for 70%+
-        const ncaClass = ncrValue !== null && ncrValue >= 0.70 ? 'text-purple-600' : 'text-gray-500';
 
-        return `
-            <div class="bg-white daily-card rounded-lg shadow-sm text-center border border-gray-200">
-                <p class="text-sm font-semibold text-gray-500 mb-1">${dayData.day}</p>
-                <div class="space-y-1 mt-2">
-                    <p class="text-base font-bold ${wtdClass}">${wtdPercent}%</p>
-                    <p class="text-base font-bold ${ncaClass}">${ncaPercent}% <span class="text-xs font-normal text-gray-500">NCA</span></p>
-                </div>
-                <p class="text-xs text-gray-500 mt-2">${tm}</p>
-            </div>
-        `;
-    }).join('');
+        // NCA styling (70% threshold, uses NCA label)
+        const ncaPercent = ncrValue !== null ? (ncrValue * 100).toFixed(1) : 'N/A';
+        // Note: NCA is greyed out if data is N/A or below target. Purple is used for 70%+
+        const ncaClass = ncrValue !== null && ncrValue >= 0.70 ? 'text-purple-600' : 'text-gray-500';
 
-    const storeHTML = `
-        <div class="section border-l-4 ${wtdCardColor}">
-            <div class="flex items-start space-x-4 flex-wrap">
-                                <div class="flex-shrink-0 w-full sm:w-48 text-left sm:text-right mb-2 sm:mb-0">
-                                        <div class="flex flex-col space-y-3">
-                                                <div class="h-6 flex items-center justify-start sm:justify-end w-full">
-                            <p class="text-xl font-bold text-gray-900">${storeName}</p>
-                        </div>
-                                                <div class="h-6 flex items-center justify-start sm:justify-end w-full">
-                            <p class="text-sm font-medium text-gray-700">NCA</p>
-                        </div>
-                    </div>
-                </div>
+        return `
+            <div class="bg-white daily-card rounded-lg shadow-sm text-center border border-gray-200">
+                <p class="text-sm font-semibold text-gray-500 mb-1">${dayData.day}</p>
+                <div class="space-y-1 mt-2">
+                    <p class="text-base font-bold ${wtdClass}">${wtdPercent}%</p>
+                    <p class="text-base font-bold ${ncaClass}">${ncaPercent}% <span class="text-xs font-normal text-gray-500">NCA</span></p>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">${tm}</p>
+            </div>
+        `;
+    }).join('');
 
-                                <div class="flex-1 w-full sm:w-auto space-y-3">
-                                        <div class="w-full">
-                        <div class="progress-bar-container">
-                            <div class="progress-bar ${wtdBarColor}" style="width: ${Math.min(parseFloat(wtdPercentage), 100)}%;">
-                                ${wtdPercentage}%
-                            </div>
-                        </div>
-                    </div>
-                                        <div class="w-full">
-                        <div class="progress-bar-container">
-                            <div class="progress-bar ${ncaBarColor}" style="width: ${Math.min(parseFloat(ncaPercentage), 100)}%;">
-                                ${ncaPercentage}%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8">
-                <h4 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4 text-center">Daily Performance (Overall / NCA)</h4>
-                <div class="daily-grid">
-                    ${dailyDataHTML}
-                </div>
-            </div>
-        </div>
-    `;
-    wtdContainer.innerHTML += storeHTML;
+    const storeHTML = `
+        <div class="section border-l-4 ${wtdCardColor}">
+            <div class="flex items-start space-x-4 flex-wrap">
+                <!-- Store Name Column (Labels) - ALIGNED TO BARS -->
+                <div class="flex-shrink-0 w-full sm:w-48 text-left sm:text-right mb-2 sm:mb-0">
+                    <!-- Use a vertical flex container to match the bar spacing -->
+                    <div class="flex flex-col space-y-3">
+                        <!-- Label 1: Store Name (Implicit WTD label) -->
+                        <div class="h-6 flex items-center justify-start sm:justify-end w-full">
+                            <p class="text-xl font-bold text-gray-900">${storeName}</p>
+                        </div>
+                        <!-- Label 2: NCA -->
+                        <div class="h-6 flex items-center justify-start sm:justify-end w-full">
+                            <p class="text-sm font-medium text-gray-700">NCA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stacked Bars -->
+                <div class="flex-1 w-full sm:w-auto space-y-3">
+                    <!-- 1. WTD BAR: Overall App Adoption -->
+                    <div class="w-full">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar ${wtdBarColor}" style="width: ${Math.min(parseFloat(wtdPercentage), 100)}%;">
+                                ${wtdPercentage}%
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2. NCA WTD BAR: New Customer Adoption -->
+                    <div class="w-full">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar ${ncaBarColor}" style="width: ${Math.min(parseFloat(ncaPercentage), 100)}%;">
+                                ${ncaPercentage}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-lg sm:text-xl font-semibold text-gray-700 mb-4 text-center">Daily Performance (Overall / NCA)</h4>
+                <div class="daily-grid">
+                    ${dailyDataHTML}
+                </div>
+            </div>
+        </div>
+    `;
+    wtdContainer.innerHTML += storeHTML;
 });
 
 
 // 3. Team Member Trends Section
 const teamMembers = {};
 Object.values(allStoresData).forEach(store => {
-    store.daily.forEach(day => {
-        // Only process days with team member data and WTD data
-        if (day.tm && day.tm.toUpperCase() !== 'DNT' && day.wtd !== null) {
-            const tms = day.tm.split('/').map(t => t.trim());
-            tms.forEach(tm => {
-                if (!teamMembers[tm]) {
-                    teamMembers[tm] = {
-                        totalPercent: 0,
-                        dayCount: 0,
-                        highDays: 0,
-                        lowDays: 0,
-                        hasData: true,
-                        ncrTotal: 0,
-                        ncrDayCount: 0
-                    };
-                }
-                // WTD Tracking (credited fully to each team member listed)
-                teamMembers[tm].totalPercent += day.wtd;
-                teamMembers[tm].dayCount += 1;
+    store.daily.forEach(day => {
+        // Only process days with team member data and WTD data
+        if (day.tm && day.tm.toUpperCase() !== 'DNT' && day.wtd !== null) {
+            const tms = day.tm.split('/').map(t => t.trim());
+            tms.forEach(tm => {
+                if (!teamMembers[tm]) {
+                    teamMembers[tm] = {
+                        totalPercent: 0,
+                        dayCount: 0,
+                        highDays: 0,
+                        lowDays: 0,
+                        hasData: true,
+                        ncrTotal: 0,
+                        ncrDayCount: 0
+                    };
+                }
+                // WTD Tracking (credited fully to each team member listed)
+                teamMembers[tm].totalPercent += day.wtd;
+                teamMembers[tm].dayCount += 1;
 
-                // NCA Tracking: ONLY counts if ncr is NOT null
-                if (day.ncr !== null) {
-                    teamMembers[tm].ncrTotal += day.ncr;
-                    teamMembers[tm].ncrDayCount += 1;
-                }
+                // NCA Tracking: ONLY counts if ncr is NOT null
+                if (day.ncr !== null) {
+                    teamMembers[tm].ncrTotal += day.ncr;
+                    teamMembers[tm].ncrDayCount += 1;
+                }
 
-                // High/Low day tracking based on WTD
-                if (day.wtd >= 0.5) {
-                    teamMembers[tm].highDays += 1;
-                } else if (day.wtd < 0.3) {
-                    teamMembers[tm].lowDays += 1;
-                }
-            });
-        }
-    });
+                // High/Low day tracking based on WTD
+                if (day.wtd >= 0.5) {
+                    teamMembers[tm].highDays += 1;
+                } else if (day.wtd < 0.3) {
+                    teamMembers[tm].lowDays += 1;
+                }
+            });
+        }
+    });
 });
 
 // Sorting and Display
 const sortedTeamMembers = Object.entries(teamMembers).sort(([, a], [, b]) => {
-    // Logic to calculate average for sorting
-    const aAvg = a.dayCount > 0 ? a.totalPercent / a.dayCount : 0;
-    const bAvg = b.dayCount > 0 ? b.totalPercent / b.dayCount : 0;
-    return bAvg - aAvg;
+    // Logic to calculate average for sorting
+    const aAvg = a.dayCount > 0 ? a.totalPercent / a.dayCount : 0;
+    const bAvg = b.dayCount > 0 ? b.totalPercent / b.dayCount : 0;
+    return bAvg - aAvg;
 });
 
 // Clear the container before populating
 teamMemberTrendsContainer.innerHTML = '';
 
 sortedTeamMembers.forEach(([tmName, tmData]) => {
-    const avgPercent = tmData.dayCount > 0 ? (tmData.totalPercent / tmData.dayCount * 100).toFixed(1) : 'N/A';
+    const avgPercent = tmData.dayCount > 0 ? (tmData.totalPercent / tmData.dayCount * 100).toFixed(1) : 'N/A';
 
-    // Calculate Average NCA - Only divides by days with actual NCA data
-    const avgNca = tmData.ncrDayCount > 0 ? (tmData.ncrTotal / tmData.ncrDayCount * 100).toFixed(1) : 'N/A';
+    // Calculate Average NCA - Only divides by days with actual NCA data
+    const avgNca = tmData.ncrDayCount > 0 ? (tmData.ncrTotal / tmData.ncrDayCount * 100).toFixed(1) : 'N/A';
 
-    const ncaColor = avgNca !== 'N/A' && parseFloat(avgNca) >= 70.0 ? 'text-purple-600' : 'text-gray-500';
+    const ncaColor = avgNca !== 'N/A' && parseFloat(avgNca) >= 70.0 ? 'text-purple-600' : 'text-gray-500';
 
-    // CONSISTENCY FIX: Use parseFloat for safer numeric comparison
-    const isHighFlier = avgPercent !== 'N/A' && parseFloat(avgPercent) >= 50.0;
+    // CONSISTENCY FIX: Use parseFloat for safer numeric comparison
+    const isHighFlier = avgPercent !== 'N/A' && parseFloat(avgPercent) >= 50.0;
 
-    const tmCardColor = isHighFlier ? 'border-green-500' : 'border-red-500';
-    const tmIcon = isHighFlier ? '🌟' : '💡'; // Star for high-fliers, bulb for focus areas
+    const tmCardColor = isHighFlier ? 'border-green-500' : 'border-red-500';
+    const tmIcon = isHighFlier ? '🌟' : '💡'; // Star for high-fliers, bulb for focus areas
 
-    const tmHTML = `
-        <div class="section flex items-center p-6 border-l-4 rounded-xl ${tmCardColor} flex-wrap">
-            <div class="flex-1 w-full sm:w-auto">
-                <h4 class="text-xl sm:text-2xl font-bold text-gray-700">${tmName}</h4>
-                <p class="text-sm sm:text-base text-gray-600 mt-2">
-                    Avg. Daily App Adoption: <span class="font-bold text-lg ${isHighFlier ? 'text-green-600' : 'text-red-600'}">${avgPercent}%</span>
-                </p>
-                                <p class="text-sm sm:text-base text-gray-600 mt-1">
-                    Avg. New Customer Adoption: <span class="font-bold text-base ${ncaColor}">${avgNca}%</span>
-                </p>
-                <p class="text-xs sm:text-sm text-gray-500 mt-1">
-                    ${tmData.highDays} high-performing day(s) & ${tmData.lowDays} day(s) that need focus.
-                </p>
-            </div>
-            <div class="w-full sm:w-1/3 flex justify-center mt-4 sm:mt-0">
-                <span class="text-4xl sm:text-5xl">${tmIcon}</span>
-            </div>
-        </div>
-    `;
-    // CRITICAL FIX: Append the generated HTML and close the loop iteration
-    teamMemberTrendsContainer.innerHTML += tmHTML;
+    const tmHTML = `
+        <div class="section flex items-center p-6 border-l-4 rounded-xl ${tmCardColor} flex-wrap">
+            <div class="flex-1 w-full sm:w-auto">
+                <h4 class="text-xl sm:text-2xl font-bold text-gray-700">${tmName}</h4>
+                <p class="text-sm sm:text-base text-gray-600 mt-2">
+                    Avg. Daily App Adoption: <span class="font-bold text-lg ${isHighFlier ? 'text-green-600' : 'text-red-600'}">${avgPercent}%</span>
+                </p>
+                <!-- NCA LINE: Renamed "New Customer Rate" to "New Customer Adoption" -->
+                <p class="text-sm sm:text-base text-gray-600 mt-1">
+                    Avg. New Customer Adoption: <span class="font-bold text-base ${ncaColor}">${avgNca}%</span>
+                </p>
+                <p class="text-xs sm:text-sm text-gray-500 mt-1">
+                    ${tmData.highDays} high-performing day(s) & ${tmData.lowDays} day(s) that need focus.
+                </p>
+            </div>
+            <div class="w-full sm:w-1/3 flex justify-center mt-4 sm:mt-0">
+                <span class="text-4xl sm:text-5xl">${tmIcon}</span>
+            </div>
+        </div>
+    `;
+    // CRITICAL FIX: Append the generated HTML and close the loop iteration
+    teamMemberTrendsContainer.innerHTML += tmHTML;
 }); // Close sortedTeamMembers.forEach loop
 
 </script>
