@@ -84,9 +84,9 @@ body {
     <!-- Header Section: Focused on New Customer Adoption -->
     <header class="text-center mb-8 sm:mb-12">
         <h1 class="text-3xl sm:text-5xl font-bold text-blue-800 mb-2">South 1 App Adoption</h1>
-        <!-- NEW: Week Ending Date -->
+        <!-- UPDATED: Week Ending Date -->
         <p class="text-sm sm:text-base font-semibold text-gray-600 mb-6">
-            Week Ending: Saturday, 22nd November 2025
+            Week Ending: Saturday, 29th October 2025
         </p>
         <p class="mt-4 text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
             New customers represent our biggest opportunity to grow our active customer base. This infographic focuses on the key trend data, ensuring we maximise our efforts, especially with new customers, as recent figures show new customers who download the app are retained more than twice as often laying the foundation for future growth and success.
@@ -97,7 +97,7 @@ body {
     <div class="section bg-yellow-100 border-l-4 border-yellow-500 mb-8">
         <h3 class="text-xl sm:text-2xl font-bold text-yellow-800 text-center mb-4">LIVE<br>App Exclusive Offers</h3>
         <div class="md:flex md:space-x-4 space-y-4 md:space-y-0">
-            <!-- Box 1: New Customer Offer (UPDATED TEXT) -->
+            <!-- Box 1: New Customer Offer -->
             <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
                 <h4 class="text-lg font-bold text-yellow-900 mb-2">New Customers</h4>
                 <p class="text-xl font-extrabold text-yellow-900">
@@ -111,30 +111,12 @@ body {
                         <li>Only available to customers on their first in-store purchase</li>
                         <li>Minimum spend of £10 (before the £5 is removed)</li>
                         <li>Must download the app in-store and prove that they have it</li>
-                        <!-- CORRECTED: Updated the discount code line -->
                         <li>Use code 'App £5 sign up - NC ONLY' when applying the £5 discount.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Box 2: Existing Customer Offer (UPDATED TO 25% TRADE-IN) -->
-            <div class="flex-1 text-center bg-yellow-50 p-4 rounded-lg border border-yellow-300 shadow-md">
-                <h4 class="text-lg font-bold text-yellow-900 mb-2"></h4>
-                <p class="text-xl font-extrabold text-yellow-900">
-                    <span id="existing-customer-offer-text">
-                      
-                    </span>
-                </p>
-                <div class="mt-2 text-sm text-yellow-700 font-semibold text-left mx-auto max-w-xs">
-                    <p class="font-bold mb-2">Details</p>
-                    <ul class="list-disc ml-4 mt-2 space-y-1">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </div>
     <!-- END NEW SECTION -->
@@ -196,182 +178,182 @@ body {
 -->
 <script>
 // Data Structure: 'daily' contains 'wtd' (overall adoption)
-// Data has been UPDATED with the new week's adoption details
+// Data has been UPDATED with the new week's adoption details (Week Ending Saturday 29th October)
 const allStoresData = {
     "Bristol": {
         daily: [
-            { day: "Mon", wtd: 0.750, ncr: 0.71, tm: "Paul T/Mike Burke" },
-            { day: "Tue", wtd: 0.595, ncr: 0.200, tm: "Paul T/Mike Burke" },
-            { day: "Wed", wtd: 0.667, ncr: 0.500, tm: "Paul T/Mike Burke/Taryn" },
-            { day: "Thu", wtd: 0.714, ncr: 0.375, tm: "Paul T/Josh B" },
-            { day: "Fri", wtd: 0.660, ncr: 0.333, tm: "Mike Burke/Taryn" },
-            { day: "Sat", wtd: 0.640, ncr: 0.400, tm: "Paul T/Mike" },
+            { day: "Mon", wtd: 0.692, ncr: 0.44, tm: "Paul T/Mike Burke" },
+            { day: "Tue", wtd: 0.633, ncr: 0.250, tm: "Paul T/Mike Burke" },
+            { day: "Wed", wtd: 0.725, ncr: 0.375, tm: "Paul T/Taryn" },
+            { day: "Thu", wtd: 0.676, ncr: 0.250, tm: "Mike Burke/Taryn" },
+            { day: "Fri", wtd: 0.735, ncr: 0.545, tm: "Paul T/Mike Burke/Josh B" },
+            { day: "Sat", wtd: 0.886, ncr: 0.800, tm: "Paul T/Mike Burke/Taryn" },
             { day: "Sun", wtd: null, ncr: null, tm: "Josh B" }
         ]
     },
     "Gloucester": {
         daily: [
-            { day: "Mon", wtd: 0.571, ncr: 1.000, tm: "Dan F/Dan W" },
-            { day: "Tue", wtd: 0.524, ncr: null, tm: "Dan F" },
-            { day: "Wed", wtd: 0.500, ncr: 1.000, tm: "Dan W" },
-            { day: "Thu", wtd: 0.720, ncr: 1.000, tm: "Dan W" },
-            { day: "Fri", wtd: 0.522, ncr: null, tm: "Dan W" },
-            { day: "Sat", wtd: 0.565, ncr: null, tm: "Dan F" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Dan F/Dan W" }
+            { day: "Mon", wtd: 0.571, ncr: null, tm: "Dan W/Dan F" },
+            { day: "Tue", wtd: 0.696, ncr: 1.000, tm: "Dan F" },
+            { day: "Wed", wtd: 0.471, ncr: null, tm: "Dan W" },
+            { day: "Thu", wtd: 0.643, ncr: null, tm: "Dan F" },
+            { day: "Fri", wtd: 0.759, ncr: null, tm: "Dan W/Dan F" },
+            { day: "Sat", wtd: 0.667, ncr: 1.000, tm: "Dan W/Dan F" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Dan W" }
         ]
     },
     "Nottingham": {
         daily: [
-            { day: "Mon", wtd: 0.750, ncr: 0.333, tm: "Nicole/Tyler" },
-            { day: "Tue", wtd: 0.650, ncr: null, tm: "Eve" },
-            { day: "Wed", wtd: 0.708, ncr: 0.0, tm: "Eve/Tyler" },
-            { day: "Thu", wtd: 0.800, ncr: 1.000, tm: "Eve" },
-            { day: "Fri", wtd: 0.741, ncr: 0.0, tm: "Eve/Nicole/Tyler" },
-            { day: "Sat", wtd: 0.773, ncr: 1.000, tm: "Eve" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Tyler" }
+            { day: "Mon", wtd: 0.706, ncr: 0.000, tm: "Eve/Nicole" },
+            { day: "Tue", wtd: 0.667, ncr: 0.000, tm: "Eve/Tyler" },
+            { day: "Wed", wtd: 0.643, ncr: 0.000, tm: "Eve/Tyler" },
+            { day: "Thu", wtd: 0.800, ncr: null, tm: "Eve" },
+            { day: "Fri", wtd: 0.731, ncr: null, tm: "Eve" },
+            { day: "Sat", wtd: 0.710, ncr: 0.500, tm: "Nicole" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Nicole" }
         ]
     },
     "Rugby": {
         daily: [
-            { day: "Mon", wtd: 0.500, ncr: 0.0, tm: "Rafaela" },
-            { day: "Tue", wtd: 0.533, ncr: 1.000, tm: "Rafaela/Jenna" },
-            { day: "Wed", wtd: 0.353, ncr: 0.0, tm: "Jenna" },
-            { day: "Thu", wtd: 0.615, ncr: 0.0, tm: "Jenna" },
-            { day: "Fri", wtd: 0.474, ncr: 1.000, tm: "Rafaela" },
-            { day: "Sat", wtd: 0.455, ncr: 0.0, tm: "Rafaela/Jenna" },
+            { day: "Mon", wtd: 0.600, ncr: 1.000, tm: "Raf/Mike Perri" },
+            { day: "Tue", wtd: 0.615, ncr: 0.000, tm: "Raf/Mike Perri" },
+            { day: "Wed", wtd: 0.667, ncr: null, tm: "Jenna" },
+            { day: "Thu", wtd: 0.571, ncr: 0.000, tm: "Raf/Mike Perri" },
+            { day: "Fri", wtd: 0.833, ncr: null, tm: "Jenna" },
+            { day: "Sat", wtd: 0.567, ncr: 0.000, tm: "Jenna" },
             { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
         ]
     },
     "Barnstaple": {
         daily: [
-            { day: "Mon", wtd: 0.531, ncr: null, tm: "Shannon" },
-            { day: "Tue", wtd: 0.655, ncr: 0.500, tm: "Shannon" },
-            { day: "Wed", wtd: 0.571, ncr: null, tm: "Matt" },
-            { day: "Thu", wtd: 0.409, ncr: null, tm: "Matt" },
-            { day: "Fri", wtd: 0.679, ncr: null, tm: "Ashley" },
-            { day: "Sat", wtd: 0.640, ncr: 0.0, tm: "Matt" },
+            { day: "Mon", wtd: 0.435, ncr: null, tm: "Ash" },
+            { day: "Tue", wtd: 0.792, ncr: 1.000, tm: "Shannon" },
+            { day: "Wed", wtd: 0.524, ncr: 0.000, tm: "Matt" },
+            { day: "Thu", wtd: 0.633, ncr: null, tm: "Matt" },
+            { day: "Fri", wtd: 0.650, ncr: 0.000, tm: "Ash/Matt" },
+            { day: "Sat", wtd: 0.595, ncr: null, tm: "Matt" },
             { day: "Sun", wtd: null, ncr: null, tm: "Matt" }
         ]
     },
     "Exeter": {
         daily: [
-            { day: "Mon", wtd: 0.706, ncr: 1.000, tm: "Ashley/Zoe" },
-            { day: "Tue", wtd: 0.719, ncr: 1.000, tm: "Zoe" },
-            { day: "Wed", wtd: 0.526, ncr: 0.667, tm: "Shannon" },
-            { day: "Thu", wtd: 0.778, ncr: 1.000, tm: "Shannon/Zoe/Ashley" },
-            { day: "Fri", wtd: 0.735, ncr: 0.429, tm: "Shannon/Zoe" },
-            { day: "Sat", wtd: 0.438, ncr: 0.600, tm: "Zoe/Ashley" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Ashley" }
+            { day: "Mon", wtd: 0.674, ncr: 0.600, tm: "Shannon/Zoe" },
+            { day: "Tue", wtd: 0.611, ncr: 0.333, tm: "Zoe" },
+            { day: "Wed", wtd: 0.703, ncr: 0.600, tm: "Ash/Zoe" },
+            { day: "Thu", wtd: 0.674, ncr: 0.778, tm: "Shannon/Zoe" },
+            { day: "Fri", wtd: 0.851, ncr: 0.625, tm: "Shannon/Zoe" },
+            { day: "Sat", wtd: 0.667, ncr: 0.833, tm: "Shannon/Ash" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Ash" }
         ]
     },
     "Birmingham": {
         daily: [
-            { day: "Mon", wtd: 0.500, ncr: null, tm: "Danielle" },
-            { day: "Tue", wtd: 0.333, ncr: 0.333, tm: "Reece" },
-            { day: "Wed", wtd: 0.556, ncr: 1.000, tm: "James W" },
-            { day: "Thu", wtd: 0.464, ncr: 0.667, tm: "Danielle" },
-            { day: "Fri", wtd: 1.000, ncr: 1.000, tm: "James W" },
-            { day: "Sat", wtd: 0.375, ncr: null, tm: "James W" },
+            { day: "Mon", wtd: 0.538, ncr: 1.000, tm: "James W" },
+            { day: "Tue", wtd: 0.600, ncr: 0.500, tm: "Reece" },
+            { day: "Wed", wtd: 0.452, ncr: 1.000, tm: "James W" },
+            { day: "Thu", wtd: 0.667, ncr: 1.000, tm: "James W" },
+            { day: "Fri", wtd: 0.429, ncr: 0.000, tm: "Danni" },
+            { day: "Sat", wtd: 0.579, ncr: 0.333, tm: "Reece" },
             { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
         ]
     },
     "Tyburn": {
         daily: [
-            { day: "Mon", wtd: 0.063, ncr: null, tm: "Deion" },
-            { day: "Tue", wtd: 0.0, ncr: null, tm: "Danielle" },
-            { day: "Wed", wtd: 0.375, ncr: null, tm: "Danielle" },
-            { day: "Thu", wtd: 0.500, ncr: null, tm: "Deion" },
-            { day: "Fri", wtd: 0.444, ncr: null, tm: "Deion" },
-            { day: "Sat", wtd: 0.500, ncr: null, tm: "Mike Bailey" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Mike Bailey" }
+            { day: "Mon", wtd: 0.500, ncr: 0.000, tm: "Danni" },
+            { day: "Tue", wtd: 0.455, ncr: null, tm: "Danni" },
+            { day: "Wed", wtd: 0.273, ncr: 0.000, tm: "Deion" },
+            { day: "Thu", wtd: 0.500, ncr: null, tm: "Danni" },
+            { day: "Fri", wtd: 0.500, ncr: null, tm: "Deion" },
+            { day: "Sat", wtd: 0.682, ncr: 1.000, tm: "Danni" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Deion" }
         ]
     },
     "Chapel Ash": {
         daily: [
-            { day: "Mon", wtd: 0.833, ncr: null, tm: "Josh T" },
-            { day: "Tue", wtd: 0.529, ncr: null, tm: "Josh T" },
-            { day: "Wed", wtd: 0.462, ncr: 1.000, tm: "Jess" },
-            { day: "Thu", wtd: 0.429, ncr: null, tm: "Josh T" },
-            { day: "Fri", wtd: 0.765, ncr: null, tm: "Josh T" },
-            { day: "Sat", wtd: 0.538, ncr: 0.0, tm: "Reece" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Reece" }
+            { day: "Mon", wtd: 0.692, ncr: 0.000, tm: "Josh T" },
+            { day: "Tue", wtd: 0.750, ncr: 1.000, tm: "Jess/Josh T" },
+            { day: "Wed", wtd: 0.615, ncr: 0.000, tm: "Reece" },
+            { day: "Thu", wtd: 0.750, ncr: null, tm: "Jess" },
+            { day: "Fri", wtd: 0.577, ncr: 1.000, tm: "Josh T" },
+            { day: "Sat", wtd: 0.667, ncr: null, tm: "Josh T" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Josh T" }
         ]
     },
     "Penn Road": {
         daily: [
-            { day: "Mon", wtd: 0.556, ncr: null, tm: "Gaynor" },
-            { day: "Tue", wtd: 0.500, ncr: null, tm: "Jess" },
-            { day: "Wed", wtd: 0.611, ncr: null, tm: "Josh T" },
-            { day: "Thu", wtd: 0.778, ncr: null, tm: "Jess" },
-            { day: "Fri", wtd: 0.385, ncr: null, tm: "Jess" },
-            { day: "Sat", wtd: 0.750, ncr: 1.000, tm: "Gaynor" },
+            { day: "Mon", wtd: 0.813, ncr: 0.000, tm: "Jess" },
+            { day: "Tue", wtd: 0.667, ncr: null, tm: "Gaynor" },
+            { day: "Wed", wtd: 0.667, ncr: 1.000, tm: "Jess" },
+            { day: "Thu", wtd: 0.500, ncr: null, tm: "Reece" },
+            { day: "Fri", wtd: 0.625, ncr: 1.000, tm: "Jess" },
+            { day: "Sat", wtd: 0.909, ncr: 1.000, tm: "Gaynor" },
             { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
         ]
     },
     "Bridgend": {
         daily: [
-            { day: "Mon", wtd: 0.481, ncr: 0.0, tm: "Tomos" },
-            { day: "Tue", wtd: 0.586, ncr: 0.333, tm: "Tomos/Lucy" },
-            { day: "Wed", wtd: 0.657, ncr: 1.000, tm: "Trudy" },
-            { day: "Thu", wtd: 0.520, ncr: 1.000, tm: "Lucy" },
-            { day: "Fri", wtd: 0.677, ncr: 0.667, tm: "Trudy" },
-            { day: "Sat", wtd: 0.659, ncr: 0.500, tm: "Tomos" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Tomos" }
+            { day: "Mon", wtd: 0.700, ncr: 1.000, tm: "Lucy/Tomos" },
+            { day: "Tue", wtd: 0.600, ncr: 0.750, tm: "Trudy" },
+            { day: "Wed", wtd: 0.714, ncr: 1.000, tm: "Trudy" },
+            { day: "Thu", wtd: 0.591, ncr: null, tm: "Tomos" },
+            { day: "Fri", wtd: 0.575, ncr: 0.500, tm: "Tomos" },
+            { day: "Sat", wtd: 0.500, ncr: 1.000, tm: "Trudy" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Trudy" }
         ]
     },
     "Merthyr": {
         daily: [
-            { day: "Mon", wtd: 0.773, ncr: 0.0, tm: "James D/Lucy" },
-            { day: "Tue", wtd: 0.682, ncr: 0.0, tm: "James D" },
-            { day: "Wed", wtd: 0.696, ncr: null, tm: "Lucy" },
-            { day: "Thu", wtd: 0.542, ncr: 0.0, tm: "Lauren" },
-            { day: "Fri", wtd: 0.795, ncr: 0.500, tm: "James D/Lucy" },
-            { day: "Sat", wtd: 0.520, ncr: 0.0, tm: "Lauren" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Lauren" }
+            { day: "Mon", wtd: 0.652, ncr: null, tm: "Lauren" },
+            { day: "Tue", wtd: 0.696, ncr: 0.000, tm: "Lucy/Lauren" },
+            { day: "Wed", wtd: 0.741, ncr: 1.000, tm: "Lucy" },
+            { day: "Thu", wtd: 0.545, ncr: 1.000, tm: "Lucy/Lauren" },
+            { day: "Fri", wtd: 0.605, ncr: 0.000, tm: "James D" },
+            { day: "Sat", wtd: 0.885, ncr: 0.667, tm: "James D" },
+            { day: "Sun", wtd: null, ncr: null, tm: "James D" }
         ]
     },
     "Rumney": {
         daily: [
-            { day: "Mon", wtd: 0.500, ncr: null, tm: "Ross" },
-            { day: "Tue", wtd: 0.442, ncr: null, tm: "Harmony" },
-            { day: "Wed", wtd: 0.486, ncr: 0.0, tm: "James D" },
-            { day: "Thu", wtd: 0.640, ncr: 1.000, tm: "James D" },
-            { day: "Fri", wtd: 0.480, ncr: 0.0, tm: "Lucy/Ross" },
-            { day: "Sat", wtd: 0.514, ncr: 0.500, tm: "Harmony" },
+            { day: "Mon", wtd: 0.417, ncr: 0.000, tm: "Ross" },
+            { day: "Tue", wtd: 0.535, ncr: null, tm: "Harmony" },
+            { day: "Wed", wtd: 0.448, ncr: 0.000, tm: "James D" },
+            { day: "Thu", wtd: 0.531, ncr: 0.000, tm: "James D" },
+            { day: "Fri", wtd: 0.550, ncr: 0.500, tm: "Lucy/Ross" },
+            { day: "Sat", wtd: 0.605, ncr: null, tm: "Harmony" },
             { day: "Sun", wtd: null, ncr: null, tm: "Ross" }
         ]
     },
     "Madeley": {
         daily: [
-            { day: "Mon", wtd: 0.787, ncr: null, tm: "Paul P" },
-            { day: "Tue", wtd: 0.775, ncr: 0.500, tm: "Rachael" },
-            { day: "Wed", wtd: 0.903, ncr: 1.000, tm: "Paul P" },
-            { day: "Thu", wtd: 0.889, ncr: 0.667, tm: "Paul P/Rachael" },
-            { day: "Fri", wtd: 0.792, ncr: 0.500, tm: "Paul P" },
-            { day: "Sat", wtd: 0.783, ncr: 0.778, tm: "Rachael" },
-            { day: "Sun", wtd: null, ncr: null, tm: "Rachael" }
+            { day: "Mon", wtd: 0.811, ncr: 0.000, tm: "Paul P" },
+            { day: "Tue", wtd: 0.825, ncr: 1.000, tm: "Rach/Paul P" },
+            { day: "Wed", wtd: 0.667, ncr: 0.000, tm: "Paul P" },
+            { day: "Thu", wtd: 0.742, ncr: 0.500, tm: "Paul P" },
+            { day: "Fri", wtd: 0.911, ncr: 1.000, tm: "Paul P/Gaynor" },
+            { day: "Sat", wtd: 0.795, ncr: 0.000, tm: "Andy" },
+            { day: "Sun", wtd: null, ncr: null, tm: "Paul P" }
         ]
     },
     "Shrewsbury": {
         daily: [
-            { day: "Mon", wtd: 0.571, ncr: 0.0, tm: "Liviu" },
-            { day: "Tue", wtd: 0.429, ncr: 0.0, tm: "Liviu" },
-            { day: "Wed", wtd: 0.824, ncr: 0.500, tm: "Rachael/Liviu" },
-            { day: "Thu", wtd: 0.606, ncr: 0.600, tm: "Liviu" },
-            { day: "Fri", wtd: 0.706, ncr: 0.667, tm: "Rachael" },
-            { day: "Sat", wtd: 0.741, ncr: 0.333, tm: "Ryen" },
+            { day: "Mon", wtd: 0.750, ncr: null, tm: "Liviu" },
+            { day: "Tue", wtd: 0.697, ncr: 0.500, tm: "Liviu" },
+            { day: "Wed", wtd: 0.500, ncr: 0.000, tm: "Rach/Liviu" },
+            { day: "Thu", wtd: 0.559, ncr: 0.500, tm: "Liviu" },
+            { day: "Fri", wtd: 0.865, ncr: 0.600, tm: "Rach" },
+            { day: "Sat", wtd: 0.595, ncr: 0.000, tm: "Liviu" },
             { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
         ]
     },
     "Wellington": {
         daily: [
-            { day: "Mon", wtd: 0.739, ncr: 0.500, tm: "Andy" },
-            { day: "Tue", wtd: 0.632, ncr: 0.0, tm: "Ryen" },
-            { day: "Wed", wtd: 0.842, ncr: null, tm: "Andy" },
-            { day: "Thu", wtd: 0.591, ncr: 0.0, tm: "Ryen" },
-            { day: "Fri", wtd: 0.571, ncr: null, tm: "Ryen" },
-            { day: "Sat", wtd: 0.550, ncr: 0.0, tm: "Andy" },
-            { day: "Sun", wtd: null, ncr: null, tm: "null" }
+            { day: "Mon", wtd: 0.800, ncr: null, tm: "Rach" },
+            { day: "Tue", wtd: 0.818, ncr: 1.000, tm: "Andy" },
+            { day: "Wed", wtd: 0.444, ncr: 0.000, tm: "Andy" },
+            { day: "Thu", wtd: 0.714, ncr: 1.000, tm: "Rach" },
+            { day: "Fri", wtd: 0.840, ncr: null, tm: "Andy" },
+            { day: "Sat", wtd: 0.757, ncr: 0.667, tm: "Raf" },
+            { day: "Sun", wtd: null, ncr: null, tm: "N/A" }
         ]
     }
 };
@@ -476,8 +458,8 @@ sortedStores.forEach(store => {
     const wtdPercentage = (wtdAvg * 100).toFixed(1);
     const ncaPercentage = (ncaAvg * 100).toFixed(1);
 
-    // Styling for Overall WTD Bar
-    const isWtdStruggling = wtdAvg < 0.5;
+    // UPDATED THRESHOLD: Store WTD must be >= 0.60 to be green
+    const isWtdStruggling = wtdAvg < 0.60;
     const wtdBarColor = isWtdStruggling ? 'bg-red-500' : 'bg-green-500';
     const wtdCardColor = isWtdStruggling ? 'border-red-500' : 'border-green-500';
 
@@ -504,8 +486,8 @@ sortedStores.forEach(store => {
 
         // WTD styling (NO LABEL)
         const wtdPercent = wtdValue !== null ? (wtdValue * 100).toFixed(1) : 'N/A';
-        // Check if WTD is below 30% for red text, otherwise green/gray
-        const wtdClass = wtdValue !== null && wtdValue < 0.3 ? 'text-red-600' : (wtdValue !== null ? 'text-green-600' : 'text-gray-400');
+        // Daily WTD: Use 0.60 threshold for daily high-performing days
+        const wtdClass = wtdValue !== null && wtdValue < 0.3 ? 'text-red-600' : (wtdValue !== null && wtdValue >= 0.60 ? 'text-green-600' : 'text-gray-400');
 
 
         // NCA styling (70% threshold, uses NCA label)
@@ -604,8 +586,8 @@ Object.values(allStoresData).forEach(store => {
                     teamMembers[tm].ncrDayCount += 1;
                 }
 
-                // High/Low day tracking based on WTD
-                if (day.wtd >= 0.5) {
+                // UPDATED THRESHOLD: High day is now >= 0.60
+                if (day.wtd >= 0.60) {
                     teamMembers[tm].highDays += 1;
                 } else if (day.wtd < 0.3) {
                     teamMembers[tm].lowDays += 1;
@@ -634,8 +616,8 @@ sortedTeamMembers.forEach(([tmName, tmData]) => {
 
     const ncaColor = avgNca !== 'N/A' && parseFloat(avgNca) >= 70.0 ? 'text-purple-600' : 'text-gray-500';
 
-    // CONSISTENCY FIX: Use parseFloat for safer numeric comparison
-    const isHighFlier = avgPercent !== 'N/A' && parseFloat(avgPercent) >= 50.0;
+    // UPDATED THRESHOLD: High Flier is now >= 60%
+    const isHighFlier = avgPercent !== 'N/A' && parseFloat(avgPercent) >= 60.0;
 
     const tmCardColor = isHighFlier ? 'border-green-500' : 'border-red-500';
     const tmIcon = isHighFlier ? '🌟' : '💡'; // Star for high-fliers, bulb for focus areas
